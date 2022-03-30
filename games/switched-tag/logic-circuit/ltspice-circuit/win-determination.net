@@ -1,0 +1,19 @@
+* Z:\home\pab\Inventions\analog-circuit-game-console\ms-circuit-video-games\games\switched-tag\logic-circuit\ltspice-circuit\win-determination.asc
+V1 VEE 0 -5
+V2 VCC 0 5
+V3 P1_it 0 PULSE(0 5 0.5 0.1 0.1 1) AC 1
+V4 P2_it 0 PULSE(0 5 1 0.1 0.1 1) AC 1
+M1 P1_it collision_detect p1_win p1_win RSJ400N10
+V5 collision_detect 0 PULSE(0 5 0.5 0.1 0.1 0.8) AC 1
+R1 p1_win 0 1k
+M2 P1_it P2_it two_winner_ignore two_winner_ignore RSJ400N10
+R2 two_winner_ignore 0 1k
+M3 P2_it collision_detect p2_win p2_win RSJ400N10
+R3 p2_win 0 1k
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\users\pab\Documents\LTspiceXVII\lib\cmp\standard.mos
+.op
+.tran 0 2s 0 10us
+.backanno
+.end
