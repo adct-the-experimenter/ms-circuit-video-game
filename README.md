@@ -10,6 +10,9 @@ Output of analog circuit block will be some signals representing position of cha
 Digital rendering module will take a snapshot of these signal representations to draw a visual and aural 
 representation of the game world.
 
+op-amp modeled in these circuits is LM358A.
+
+
 #### The game circuits still need development. There is not a video signal output or audio signal output to the TV display yet.
 
 
