@@ -1,0 +1,23 @@
+****** Power Discrete Diode Electrical Parameters ******
+** Product: 1N/FDLL914/A/B / 916/A/B / 4148 / 4448
+** Package: DO-35 / LL-34
+**------------------------------------------------------
+.MODEL D1N914 D
++ IS=3.45e-09
++ RS=0.452422
++ IKF=0.0528
++ N=1.94
++ ISR=1.01e-09
++ NR=2.0
++ CJO=8.68e-13
++ M=0.02504
++ VJ=0.90906
++ FC=0.5
++ TT=1.012e-8
++ BV=100 
++ IBV=1e-05
++ EG=0.92
+**------------------------------------------------------
+** Creation: Jul-24-2007   Rev: 1.0
+** Fairchild Semiconductor
+
