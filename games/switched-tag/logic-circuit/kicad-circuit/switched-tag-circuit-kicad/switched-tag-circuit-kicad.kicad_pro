@@ -424,10 +424,6 @@
       "Switched Tag Absolute Zero Detector"
     ],
     [
-      "8b4c83a3-5435-497c-94c0-3ffbd00dce9e",
-      "Switched Tag Pendelum Model"
-    ],
-    [
       "eda06b69-f42a-4703-ac3e-8e4c13148bd3",
       "It Player Determination "
     ],
@@ -438,6 +434,10 @@
     [
       "32d970ae-9ef7-45ca-9966-ff1696c329b6",
       "Sample-and-hold-player-two-it-value"
+    ],
+    [
+      "68fe8760-7121-4ab9-a6d3-f164d1645af8",
+      "Switched Tag Pendelum Model"
     ],
     [
       "5063b61c-13ff-4ac2-b013-ec01ef23a5a4",
