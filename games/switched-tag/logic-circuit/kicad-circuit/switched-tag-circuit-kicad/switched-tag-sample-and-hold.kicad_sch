@@ -516,7 +516,7 @@
     (property "Reference" "Q1" (id 0) (at 153.67 104.1399 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "" (id 1) (at 153.67 106.6799 0)
+    (property "Value" "RUL035N02" (id 1) (at 153.67 106.6799 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "" (id 2) (at 152.4 102.87 0)
