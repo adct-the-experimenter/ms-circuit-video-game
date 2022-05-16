@@ -1,0 +1,27 @@
+(kicad_sch (version 20211123) (generator eeschema)
+
+  (uuid e63e39d7-6ac0-4ffd-8aa3-1841a4541b55)
+
+  (paper "A4")
+
+  (lib_symbols
+  )
+
+
+  (text "Logic module connector\n" (at 62.23 68.58 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 1a6d2848-e78e-49fe-8978-e1890f07836f)
+  )
+  (text "Power Input" (at 91.44 54.61 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 3a6bc91f-e221-4153-93e9-30b371cec447)
+  )
+  (text "Rendering Module connector" (at 111.76 68.58 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid e23e042d-8f92-4013-8975-7e4b18e4c81f)
+  )
+
+  (sheet_instances
+    (path "/" (page "1"))
+  )
+)
