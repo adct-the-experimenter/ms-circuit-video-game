@@ -1,0 +1,28 @@
+Define game variables
+
+reset, 
+player 1 location, player 2 location,
+player 1 it value, player 2 it value, 
+player 1 it status, player 2 it status, player 1 win, player 2 win, two winner ignore
+collision detect signal,
+pendelum signal
+
+Setup code for when microcontroller is powering up
+1. Initialize ADCs
+2. Initialize values of variables
+
+Loop
+
+#ADC value retrieval process
+3. Select ADC
+4. Get value from ADC
+5. Store adc value to corresponding variable
+6. Repeat step 3 - 5 until all game variables initialized
+
+#Drawing 
+7. Draw player 1, bright blue if it, blue if not it
+8. Draw player 2, red if it, brown if not it
+9. Draw pendelum
+10. Draw a flash on screen if collision happened
+11. Make background more white if player 1 wins, more black if player 2 wins
+
