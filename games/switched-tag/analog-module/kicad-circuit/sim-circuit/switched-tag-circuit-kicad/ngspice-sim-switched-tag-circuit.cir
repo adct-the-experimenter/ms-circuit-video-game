@@ -1,0 +1,219 @@
+.title KiCad schematic
+.include "/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/games/switched-tag/logic-circuit/kicad-circuit/switched-tag-circuit-kicad/../../../../../spice-models/1N914.lib"
+.include "/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/games/switched-tag/logic-circuit/kicad-circuit/switched-tag-circuit-kicad/../../../../../spice-models/rul035n02.lib"
+.include "/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/MCP6001.mod"
+V8 /p2y GND dc(1)
+V7 /p2x GND dc(1)
+V6 /p1y GND dc(1)
+V1 /p1x GND sin(1.5 1.5 10)
+V2 /p1_it_button GND pulse(0 3 2 0.1 0.1 1 2)
+V3 /p2_it_button GND pulse(0 3 1 0.1 0.1 1 2)
+V4 -3V3 GND dc(-3.3)
+V5 +3V3 GND dc(3.3)
+R18 /Switched_Tag_2D_Collision_Detection/xdiff-ydiff Net-_R17-Pad2_ 10k
+R17 /Switched_Tag_2D_Collision_Detection/xdiff+ydiff Net-_R17-Pad2_ 10k
+R15 Net-_R13-Pad1_ /Switched_Tag_2D_Collision_Detection/xdiff+ydiff 10k
+R13 Net-_R13-Pad1_ GND 5k
+R3 /p1y Net-_R3-Pad2_ 10k
+R1 /p1x Net-_R1-Pad2_ 10k
+R2 /p2x Net-_R2-Pad2_ 10k
+R7 Net-_R2-Pad2_ /Switched_Tag_2D_Collision_Detection/xdiff 10k
+XU1 Net-_R1-Pad2_ Net-_R2-Pad2_ +3V3 -3V3 /Switched_Tag_2D_Collision_Detection/xdiff MCP6001
+R6 GND Net-_R3-Pad2_ 10k
+R5 GND Net-_R1-Pad2_ 10k
+XU4 Net-_R11-Pad2_ Net-_R12-Pad2_ +3V3 -3V3 /Switched_Tag_2D_Collision_Detection/xdiff-ydiff MCP6001
+R16 Net-_R12-Pad2_ /Switched_Tag_2D_Collision_Detection/xdiff-ydiff 10k
+R11 /Switched_Tag_2D_Collision_Detection/ydiff Net-_R11-Pad2_ 10k
+R14 GND Net-_R11-Pad2_ 10k
+R12 /Switched_Tag_2D_Collision_Detection/xdiff Net-_R12-Pad2_ 10k
+XU3 Net-_R10-Pad2_ Net-_R13-Pad1_ +3V3 -3V3 /Switched_Tag_2D_Collision_Detection/xdiff+ydiff MCP6001
+R9 /Switched_Tag_2D_Collision_Detection/xdiff Net-_R10-Pad2_ 10k
+R10 /Switched_Tag_2D_Collision_Detection/ydiff Net-_R10-Pad2_ 10k
+R8 Net-_R4-Pad2_ /Switched_Tag_2D_Collision_Detection/ydiff 10k
+XU2 Net-_R3-Pad2_ Net-_R4-Pad2_ +3V3 -3V3 /Switched_Tag_2D_Collision_Detection/ydiff MCP6001
+R4 /p2y Net-_R4-Pad2_ 10k
+R20 Net-_R19-Pad1_ /Switched_Tag_2D_Collision_Detection/diff_sum_result 10k
+R19 Net-_R19-Pad1_ GND 10k
+XU5 Net-_R17-Pad2_ Net-_R19-Pad1_ +3V3 -3V3 /Switched_Tag_2D_Collision_Detection/diff_sum_result MCP6001
+R25 /Switched_Tag_2D_Collision_Detection/Switched_Tag_Absolute_Zero_Detector/zero_detect Net-_D3-Pad1_ 10k
+R26 Net-_D3-Pad1_ Net-_D4-Pad2_ 10k
+XU8 GND Net-_D3-Pad1_ +3V3 -3V3 Net-_D3-Pad2_ MCP6001
+D3 Net-_D3-Pad2_ Net-_D3-Pad1_ D1N914
+C1 /Switched_Tag_2D_Collision_Detection/Switched_Tag_Absolute_Zero_Detector/dir_detect_collision Net-_C1-Pad2_ 0.1u
+R21 Net-_D1-Pad2_ GND 10k
+XU6 Net-_D1-Pad1_ Net-_D1-Pad2_ +3V3 -3V3 /Switched_Tag_2D_Collision_Detection/Switched_Tag_Absolute_Zero_Detector/dir_detect_collision MCP6001
+R22 /Switched_Tag_2D_Collision_Detection/diff_sum_result Net-_D1-Pad1_ 10k
+D2 Net-_D1-Pad1_ Net-_D1-Pad2_ D1N914
+D1 Net-_D1-Pad2_ Net-_D1-Pad1_ D1N914
+R29 Net-_R27-Pad2_ /collision_detect_signal 10k
+D4 Net-_D4-Pad2_ Net-_D3-Pad2_ D1N914
+XU9 GND Net-_R27-Pad2_ +3V3 -3V3 /collision_detect_signal MCP6001
+R28 /Switched_Tag_2D_Collision_Detection/Switched_Tag_Absolute_Zero_Detector/zero_detect Net-_R27-Pad2_ 10k
+R27 Net-_D4-Pad2_ Net-_R27-Pad2_ 5k
+R23 Net-_C1-Pad2_ Net-_C2-Pad1_ 10k
+XU7 GND Net-_C2-Pad1_ +3V3 -3V3 /Switched_Tag_2D_Collision_Detection/Switched_Tag_Absolute_Zero_Detector/zero_detect MCP6001
+R24 Net-_C2-Pad1_ /Switched_Tag_2D_Collision_Detection/Switched_Tag_Absolute_Zero_Detector/zero_detect 10k
+C2 Net-_C2-Pad1_ /Switched_Tag_2D_Collision_Detection/Switched_Tag_Absolute_Zero_Detector/zero_detect 100p
+D7 /It_Player_Determination_/it_dir_detect /p1_it_signal D1N914
+R30 Net-_D5-Pad2_ GND 10k
+XU10 Net-_D5-Pad1_ Net-_D5-Pad2_ +3V3 -3V3 /It_Player_Determination_/it_dir_detect MCP6001
+R31 /It_Player_Determination_/it_val_diff Net-_D5-Pad1_ 10k
+D5 Net-_D5-Pad2_ Net-_D5-Pad1_ D1N914
+D6 Net-_D5-Pad1_ Net-_D5-Pad2_ D1N914
+XU11 Net-_R33-Pad2_ Net-_R34-Pad2_ +3V3 -3V3 /It_Player_Determination_/it_val_diff MCP6001
+R37 Net-_R34-Pad2_ /It_Player_Determination_/it_val_diff 10k
+R33 /It_Player_Determination_/p1_it_value Net-_R33-Pad2_ 10k
+R36 Net-_R33-Pad2_ GND 10k
+R34 /It_Player_Determination_/p2_it_value Net-_R34-Pad2_ 10k
+R35 Net-_D8-Pad2_ Net-_R35-Pad2_ 10k
+D8 Net-_D8-Pad2_ /It_Player_Determination_/it_dir_detect D1N914
+R32 /p1_it_signal GND 10k
+XU12 GND Net-_R35-Pad2_ +3V3 -3V3 /p2_it_signal MCP6001
+R38 Net-_R35-Pad2_ /p2_it_signal 10k
+XU14 Net-_C3-Pad1_ /It_Player_Determination_/p1_it_value +3V3 -3V3 /It_Player_Determination_/p1_it_value MCP6001
+XQ1 Net-_Q1-Pad1_ /p1_it_button Net-_C3-Pad1_ RUL035N02
+C3 Net-_C3-Pad1_ GND 0.1u
+XU13 /pendelum_signal Net-_Q1-Pad1_ +3V3 -3V3 Net-_Q1-Pad1_ MCP6001
+XU16 Net-_C4-Pad1_ /It_Player_Determination_/p2_it_value +3V3 -3V3 /It_Player_Determination_/p2_it_value MCP6001
+XQ2 Net-_Q2-Pad1_ /p2_it_button Net-_C4-Pad1_ RUL035N02
+C4 Net-_C4-Pad1_ GND 0.1u
+XU15 /pendelum_signal Net-_Q2-Pad1_ +3V3 -3V3 Net-_Q2-Pad1_ MCP6001
+XU17 GND Net-_C5-Pad1_ +3V3 -3V3 Net-_C5-Pad2_ MCP6001
+XU18 Net-_R40-Pad2_ GND +3V3 -3V3 Net-_R39-Pad1_ MCP6001
+R39 Net-_R39-Pad1_ Net-_C5-Pad1_ 100k
+C5 Net-_C5-Pad1_ Net-_C5-Pad2_ 2u
+R40 Net-_C5-Pad2_ Net-_R40-Pad2_ 10k
+R41 Net-_R40-Pad2_ Net-_R39-Pad1_ 10k
+XU19 Net-_R40-Pad2_ /pendelum_signal +3V3 GND /pendelum_signal MCP6001
+XQ3 /p1_it_signal /collision_detect_signal /p1_win_signal RUL035N02
+R42 /p1_win_signal GND 1k
+R43 /p2_win_signal GND 1k
+XQ5 /p2_it_signal /p1_it_signal /two_winner_ignore_signal RUL035N02
+R44 /two_winner_ignore_signal GND 1k
+XQ4 /p2_it_signal /collision_detect_signal /p2_win_signal RUL035N02
+.save @v8[i]
+.save @v7[i]
+.save @v6[i]
+.save @v1[i]
+.save @v2[i]
+.save @v3[i]
+.save @v4[i]
+.save @v5[i]
+.save @r18[i]
+.save @r17[i]
+.save @r15[i]
+.save @r13[i]
+.save @r3[i]
+.save @r1[i]
+.save @r2[i]
+.save @r7[i]
+.save @r6[i]
+.save @r5[i]
+.save @r16[i]
+.save @r11[i]
+.save @r14[i]
+.save @r12[i]
+.save @r9[i]
+.save @r10[i]
+.save @r8[i]
+.save @r4[i]
+.save @r20[i]
+.save @r19[i]
+.save @r25[i]
+.save @r26[i]
+.save @d3[id]
+.save @c1[i]
+.save @r21[i]
+.save @r22[i]
+.save @d2[id]
+.save @d1[id]
+.save @r29[i]
+.save @d4[id]
+.save @r28[i]
+.save @r27[i]
+.save @r23[i]
+.save @r24[i]
+.save @c2[i]
+.save @d7[id]
+.save @r30[i]
+.save @r31[i]
+.save @d5[id]
+.save @d6[id]
+.save @r37[i]
+.save @r33[i]
+.save @r36[i]
+.save @r34[i]
+.save @r35[i]
+.save @d8[id]
+.save @r32[i]
+.save @r38[i]
+.save @c3[i]
+.save @c4[i]
+.save @r39[i]
+.save @c5[i]
+.save @r40[i]
+.save @r41[i]
+.save @r42[i]
+.save @r43[i]
+.save @r44[i]
+.save V(+3V3)
+.save V(-3V3)
+.save V(/It_Player_Determination_/it_dir_detect)
+.save V(/It_Player_Determination_/it_val_diff)
+.save V(/It_Player_Determination_/p1_it_value)
+.save V(/It_Player_Determination_/p2_it_value)
+.save V(/Switched_Tag_2D_Collision_Detection/Switched_Tag_Absolute_Zero_Detector/dir_detect_collision)
+.save V(/Switched_Tag_2D_Collision_Detection/Switched_Tag_Absolute_Zero_Detector/zero_detect)
+.save V(/Switched_Tag_2D_Collision_Detection/diff_sum_result)
+.save V(/Switched_Tag_2D_Collision_Detection/xdiff)
+.save V(/Switched_Tag_2D_Collision_Detection/xdiff+ydiff)
+.save V(/Switched_Tag_2D_Collision_Detection/xdiff-ydiff)
+.save V(/Switched_Tag_2D_Collision_Detection/ydiff)
+.save V(/collision_detect_signal)
+.save V(/p1_it_button)
+.save V(/p1_it_signal)
+.save V(/p1_win_signal)
+.save V(/p1x)
+.save V(/p1y)
+.save V(/p2_it_button)
+.save V(/p2_it_signal)
+.save V(/p2_win_signal)
+.save V(/p2x)
+.save V(/p2y)
+.save V(/pendelum_signal)
+.save V(/two_winner_ignore_signal)
+.save V(Net-_C1-Pad2_)
+.save V(Net-_C2-Pad1_)
+.save V(Net-_C3-Pad1_)
+.save V(Net-_C4-Pad1_)
+.save V(Net-_C5-Pad1_)
+.save V(Net-_C5-Pad2_)
+.save V(Net-_D1-Pad1_)
+.save V(Net-_D1-Pad2_)
+.save V(Net-_D3-Pad1_)
+.save V(Net-_D3-Pad2_)
+.save V(Net-_D4-Pad2_)
+.save V(Net-_D5-Pad1_)
+.save V(Net-_D5-Pad2_)
+.save V(Net-_D8-Pad2_)
+.save V(Net-_Q1-Pad1_)
+.save V(Net-_Q2-Pad1_)
+.save V(Net-_R1-Pad2_)
+.save V(Net-_R10-Pad2_)
+.save V(Net-_R11-Pad2_)
+.save V(Net-_R12-Pad2_)
+.save V(Net-_R13-Pad1_)
+.save V(Net-_R17-Pad2_)
+.save V(Net-_R19-Pad1_)
+.save V(Net-_R2-Pad2_)
+.save V(Net-_R27-Pad2_)
+.save V(Net-_R3-Pad2_)
+.save V(Net-_R33-Pad2_)
+.save V(Net-_R34-Pad2_)
+.save V(Net-_R35-Pad2_)
+.save V(Net-_R39-Pad1_)
+.save V(Net-_R4-Pad2_)
+.save V(Net-_R40-Pad2_)
+.tran 100m 5 0
+.end
+
