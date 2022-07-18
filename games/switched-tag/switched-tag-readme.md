@@ -8,4 +8,8 @@ the player who has been the closest to hitting the pendelum at its lowest point 
 
 ## Controls 
 
-Use joystick to move the character. Press button to hit pendelum and become "It".
+Use joystick to move the character. 
+
+Press pendelum hit button to hit pendelum and become "It".
+
+Use switch to change between hitting pendelum at any point or hitting the pendelum at a constant low point.
