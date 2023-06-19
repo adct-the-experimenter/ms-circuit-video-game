@@ -13,6 +13,9 @@
 
 #include <signal.h> //for signal interrupt
 
+
+#include "raylib.h" //for drawing 
+
 //Tutorial code from 
 //https://blog.mbedded.ninja/programming/operating-systems/linux/linux-serial-ports-using-c-cpp/
 
@@ -45,8 +48,29 @@ void read_adc_value_from_UART(uint16_t* adc_val_ptr, uint8_t* adc_buf_index_ptr,
 							  ReaderState* reader_state_ptr);
 
 
+//function to initialize raylib
+bool InitRaylib();
+void CloseRaylib();
+
+const int screenWidth = 800;
+const int screenHeight = 450;
+void render();
+
+#define NUM_ADC_INPUTS 8
+
+#define ADC_MAX_VAL 4095
+#define ADC_MIN_VAL 0
+
+enum class ADC_Channel : uint8_t {P1X=0, P1Y, P2X, CD, PD, P2Y, P2_IT, P1_IT };
+float adc_channel_info[NUM_ADC_INPUTS] = {0,0,0,0,0,0,0,0};
+
 int main() {
   
+	if(!InitRaylib())
+	{
+		printf("Failed to initialize raylib!\n");
+		return -1;
+	}
   
 	//if initialization of UART PC communication fails, exit program
 	if(!init_UART_PC_comm())
@@ -54,6 +78,8 @@ int main() {
 	  printf("Failed to initialize PC UART communication!\n");
 	  return -1;
 	}
+	
+	
 
 	// Allocate memory for read buffer, set size according to your needs
 	char read_buf_adc_val[100];
@@ -72,15 +98,67 @@ int main() {
 	signal(SIGINT, handle_sigint);
 	while (!g_quitProgram)
 	{
+		
+		//read adc channel and value from UART
 		read_adc_value_from_UART(&adc_val,&adc_channel,&ms_timeout,
 								&read_buf_adc_val[0], &read_buf_adc_val_index,
 							    &reader_state);
-	    
+	    	    
+	     //if adc read done
+	     if(reader_state == ReaderState::READ_DONE)
+	     {
+			 //update adc channel info
+			 adc_channel_info[adc_channel] = (float)adc_val;
+			 
+		 }
+		 
+	    //draw stuff.
+	    render();
 	}
-
+	
+	CloseRaylib();
+	
 	return 0; // success
   
 };
+
+void CloseRaylib()
+{
+	 CloseWindow(); 
+}
+
+void render()
+{
+	//P1X=0, P1Y, P2X, CD, PD, P2Y, P2_IT, P1_IT
+	
+	if(WindowShouldClose()){g_quitProgram = true;}
+	
+	float p1x = adc_channel_info[static_cast<int>(ADC_Channel::P1X)];
+	p1x = ( p1x / (float)(ADC_MAX_VAL - ADC_MIN_VAL) ) * screenWidth;
+	
+	float p1y = adc_channel_info[static_cast<int>(ADC_Channel::P1Y)];
+	p1y = ( p1y / (float)(ADC_MAX_VAL - ADC_MIN_VAL) ) * screenHeight;
+	
+	Vector2 p1Position = { p1x, p1y};
+	
+	float p2x = adc_channel_info[static_cast<int>(ADC_Channel::P2X)];
+	p2x = ( p2x / (float)(ADC_MAX_VAL - ADC_MIN_VAL) ) * screenWidth;
+	
+	float p2y = adc_channel_info[static_cast<int>(ADC_Channel::P2Y)];
+	p2y = ( p2y / (float)(ADC_MAX_VAL - ADC_MIN_VAL) ) * screenHeight;
+	
+	Vector2 p2Position = { p2x, p2y};
+
+	BeginDrawing();
+
+    ClearBackground(RAYWHITE);
+
+    DrawCircleV(p1Position, 50, RED);
+    
+    DrawCircleV(p2Position, 50, BLUE);
+
+    EndDrawing();
+}
 
 
 
@@ -112,7 +190,7 @@ void read_adc_value_from_UART(uint16_t* adc_val_ptr, uint8_t* adc_channel_ptr, s
 	
 	
 	// Show the user what is being read from the serial port.
-	std::cout << data_byte;
+	//std::cout << data_byte;
 	
 	switch(*reader_state_ptr)
 	{
@@ -189,7 +267,7 @@ void read_adc_value_from_UART(uint16_t* adc_val_ptr, uint8_t* adc_channel_ptr, s
 		}
 		case ReaderState::READ_DONE:
 		{
-			std::cout << "adc channel: " << uint(*adc_channel_ptr) << ", adc value: " << *adc_val_ptr << "\n";
+			//std::cout << "adc channel: " << uint(*adc_channel_ptr) << ", adc value: " << *adc_val_ptr << "\n";
 			*reader_state_ptr = ReaderState::READING_ADC_CHANNEL;
 			break;
 		}
@@ -224,6 +302,18 @@ bool init_UART_PC_comm()
     
     // Set the number of stop bits.
     serial_port.SetStopBits(LibSerial::StopBits::STOP_BITS_1) ;
+    
+    return true;
+}
+
+
+bool InitRaylib()
+{
+	
+
+    InitWindow(screenWidth, screenHeight, "Switched Tag Rendering Window");
+
+    //SetTargetFPS(120);               // Set our game to run at 60 frames-per-second
     
     return true;
 }

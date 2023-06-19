@@ -27,8 +27,6 @@ set ( PROJECT_LINK_LIBS  raylib)
 #For the shared library:
 
 link_directories( /usr/lib /usr/local/lib)
-
- 
  
 
 set ( PROJECT_INCLUDE_DIR  ${SDL2_INCLUDE_DIRS} ./src )
@@ -53,7 +51,7 @@ if( ${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD" )
 	message( STATUS "System detected is FreeBSD")
 	
 elseif( ${CMAKE_SYSTEM_NAME} MATCHES "Linux" )
-	set ( PROJECT_LINK_LIBS  ${PROJECT_LINK_LIBS} pthread m dl )
+	set ( PROJECT_LINK_LIBS  ${PROJECT_LINK_LIBS} pthread m dl serial)
 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
 	message(STATUS "System detected is Linux")
 else ()
