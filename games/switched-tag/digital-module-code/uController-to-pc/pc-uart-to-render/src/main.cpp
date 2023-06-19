@@ -1,12 +1,15 @@
 // C library headers
-#include <stdio.h>
-#include <string.h>
+#include <cstdio>
+#include <cstring>
+#include <string>
 
-// Linux headers
-#include <fcntl.h> // Contains file controls like O_RDWR
-#include <errno.h> // Error integer and strerror() function
-#include <termios.h> // Contains POSIX terminal control definitions
-#include <unistd.h> // write(), read(), close()
+
+#include <libserial/SerialPort.h>
+
+#include <cstdlib>
+#include <iostream>
+#include <unistd.h>
+
 
 #include <signal.h> //for signal interrupt
 
@@ -23,82 +26,243 @@ void handle_sigint(int sig)
 {
 	g_quitProgram = 1;
     printf("Caught interrupt signal, signal %d\n", sig);
-}
+}	
+
+//the serial port that will host UART and PC communication
+LibSerial::SerialPort serial_port;
+const char* const SERIAL_PORT_1 = "/dev/ttyACM0" ;
+
+
+//function to initialize communication between UART and PC
+//returns bool indicating if initialization was successful or not.
+bool init_UART_PC_comm();
+
+//function to read value from string
+bool read_adc_value_from_char_buffer(char* read_buf_ptr, uint16_t* adc_val, uint8_t* adc_buf_index);
+
 
 int main() {
-  // Open the serial port. Change device path as needed (currently set to an standard FTDI USB-UART cable type device)
-  int serial_port = open("/dev/ttyACM0", O_RDWR);
-
-  // Create new termios struct, we call it 'tty' for convention
-  struct termios tty;
-
-  // Read in existing settings, and handle any error
-  if(tcgetattr(serial_port, &tty) != 0) {
-      printf("Error %i from tcgetattr: %s\n", errno, strerror(errno));
-      return 1;
-  }
-
-  tty.c_cflag &= ~PARENB; // Clear parity bit, disabling parity (most common)
-  tty.c_cflag &= ~CSTOPB; // Clear stop field, only one stop bit used in communication (most common)
-  tty.c_cflag &= ~CSIZE; // Clear all bits that set the data size 
-  tty.c_cflag |= CS8; // 8 bits per byte (most common)
-  tty.c_cflag &= ~CRTSCTS; // Disable RTS/CTS hardware flow control (most common)
-  tty.c_cflag |= CREAD | CLOCAL; // Turn on READ & ignore ctrl lines (CLOCAL = 1)
-
-  tty.c_lflag &= ~ICANON;
-  tty.c_lflag &= ~ECHO; // Disable echo
-  tty.c_lflag &= ~ECHOE; // Disable erasure
-  tty.c_lflag &= ~ECHONL; // Disable new-line echo
-  tty.c_lflag &= ~ISIG; // Disable interpretation of INTR, QUIT and SUSP
-  tty.c_iflag &= ~(IXON | IXOFF | IXANY); // Turn off s/w flow ctrl
-  tty.c_iflag &= ~(IGNBRK|BRKINT|PARMRK|ISTRIP|INLCR|IGNCR|ICRNL); // Disable any special handling of received bytes
-
-  tty.c_oflag &= ~OPOST; // Prevent special interpretation of output bytes (e.g. newline chars)
-  tty.c_oflag &= ~ONLCR; // Prevent conversion of newline to carriage return/line feed
-  // tty.c_oflag &= ~OXTABS; // Prevent conversion of tabs to spaces (NOT PRESENT ON LINUX)
-  // tty.c_oflag &= ~ONOEOT; // Prevent removal of C-d chars (0x004) in output (NOT PRESENT ON LINUX)
-
-  tty.c_cc[VTIME] = 10;    // Wait for up to 1s (10 deciseconds), returning as soon as any data is received.
-  tty.c_cc[VMIN] = 0;
-
-  // Set in/out baud rate to be 115200
-  cfsetispeed(&tty, B115200);
-  cfsetospeed(&tty, B115200);
-
-  // Save tty settings, also checking for error
-  if (tcsetattr(serial_port, TCSANOW, &tty) != 0) {
-      printf("Error %i from tcsetattr: %s\n", errno, strerror(errno));
-      return 1;
-  }
-
-  // Allocate memory for read buffer, set size according to your needs
-  char read_buf [256];
-
-  // Normally you wouldn't do this memset() call, but since we will just receive
-  // ASCII data for this example, we'll set everything to 0 so we can
-  // call printf() easily.
-  memset(&read_buf, '\0', sizeof(read_buf));
   
-  signal(SIGINT, handle_sigint);
-  while (!g_quitProgram)
-  {
-	  // Read bytes. The behaviour of read() (e.g. does it block?,
-	  // how long does it block for?) depends on the configuration
-	  // settings above, specifically VMIN and VTIME
-	  int num_bytes = read(serial_port, &read_buf, sizeof(read_buf));
+  
+	//if initialization of UART PC communication fails, exit program
+	if(!init_UART_PC_comm())
+	{
+	  printf("Failed to initialize PC UART communication!\n");
+	  return -1;
+	}
 
-	  // n is the number of bytes read. n may be 0 if no bytes were received, and can also be -1 to signal an error.
-	  if (num_bytes < 0) {
-		  printf("Error reading: %s", strerror(errno));
-		  return 1;
-	  }
+	// Allocate memory for read buffer, set size according to your needs
+	char read_buf_adc_val[100];
+	uint8_t read_buf_adc_val_index = 0;
+	memset(&read_buf_adc_val, '\0', sizeof(read_buf_adc_val));
+	
+	//set up state machine for reading adc channel and value and matching channel to value.
+	enum class ReaderState { STARTING_READ=0, READING_ADC_CHANNEL, READING_ADC_VALUE, READ_DONE };
+	ReaderState reader_state = ReaderState::STARTING_READ;
+	
+	
+	uint16_t adc_val = 0;
+	uint8_t adc_channel = 0;
+	
+	signal(SIGINT, handle_sigint);
+	while (!g_quitProgram)
+	{
+		// Wait for data to be available at the serial port.
+		while(!serial_port.IsDataAvailable()) 
+		{
+			usleep(1000) ;
+		}
 
-	  // Here we assume we received ASCII data, but you might be sending raw bytes (in that case, don't try and
-	  // print it to the screen like this!)
-	  printf("\nRead %i bytes. Received message: %s\n", num_bytes, read_buf);
+		// Specify a timeout value (in milliseconds).
+		size_t ms_timeout = 250 ;
 
-  }
+		// Char variable to store data coming from the serial port.
+		char data_byte;
+		
+		
+		// Read one byte from the serial port and print it to the terminal.
+		try
+		{
+			// Read a single byte of data from the serial port.
+			serial_port.ReadByte(data_byte, ms_timeout) ;
+		}
+		catch (const LibSerial::ReadTimeout&)
+		{
+			std::cerr << "\nThe ReadByte() call has timed out." << std::endl ;
+		}
+		
+		
+		// Show the user what is being read from the serial port.
+		std::cout << data_byte;
+		
+		switch(reader_state)
+		{
+			case ReaderState::STARTING_READ:
+			{
+				//if space character found, then skip and wait for \n
+				if(data_byte == ' ')
+				{
+					//reset buffer adc val index
+					read_buf_adc_val_index = 0;
+					
+					//do nothing
+				}
+				else if(data_byte == '\n')
+				{
+					//change state to reading adc channel
+					reader_state = ReaderState::READING_ADC_CHANNEL;
+				}
+				break;
+			}
+			case ReaderState::READING_ADC_CHANNEL:
+			{
+				switch(data_byte)
+				{
+					case '0':{adc_channel = 0; break;}
+					case '1':{adc_channel = 1; break;}
+					case '2':{adc_channel = 2; break;}
+					case '3':{adc_channel = 3; break;}
+					case '4':{adc_channel = 4; break;}
+					case '5':{adc_channel = 5; break;}
+					case '6':{adc_channel = 6; break;}
+					case '7':{adc_channel = 7; break;}
+				}
+				
+				//if space character found
+				if(data_byte == ' ')
+				{
+					//reset buffer adc val index
+					read_buf_adc_val_index = 0;
+					
+					//change state to reading adc value
+					reader_state = ReaderState::READING_ADC_VALUE;
+				}
+				//if \n character found
+				else if(data_byte == '\n')
+				{
+					//do nothing.
+				}  
+				
+				break;
+			}
+			case ReaderState::READING_ADC_VALUE:
+			{
+				read_buf_adc_val[read_buf_adc_val_index] = data_byte;
+				read_buf_adc_val_index++;
+				
+				//if space character found, then skip and wait for \n
+				if(data_byte == ' ')
+				{
+					//do nothing
+				}
+				//if \n character found 
+				else if(data_byte == '\n')
+				{
+					
+					//convert chars in read buf to integer and store it
+					adc_val = atoi(read_buf_adc_val);
+					
+					//change state to read done
+					reader_state = ReaderState::READ_DONE;
+				}
+				  
+				break;
+			}
+			case ReaderState::READ_DONE:
+			{
+				std::cout << "adc channel: " << uint(adc_channel) << ", adc value: " << adc_val << "\n";
+				reader_state = ReaderState::READING_ADC_CHANNEL;
+				break;
+			}
+		}
+	    
+	}
 
-  close(serial_port);
-  return 0; // success
+	return 0; // success
+  
 };
+
+
+
+bool read_adc_value_from_char_buffer(char* read_buf_ptr,uint16_t* adc_val_ptr, uint8_t* adc_buf_index_ptr)
+{
+	//bool to indicate if valid adc value received
+	bool recv_valid_adc_buf_value = false;
+
+	char* first_char = &read_buf_ptr[0];
+	*adc_buf_index_ptr = atoi(first_char);
+
+	bool adc_buf_index_valid = false;
+
+	if(*adc_buf_index_ptr >= 0 && *adc_buf_index_ptr <= 7){adc_buf_index_valid = true;}
+
+	bool space_char_present = false;
+
+	char* second_char = &read_buf_ptr[1];
+	if(*second_char == ' '){space_char_present = true;}
+
+	recv_valid_adc_buf_value = space_char_present & adc_buf_index_valid;
+
+	if(recv_valid_adc_buf_value)
+	{
+		char sub_str_num[7];
+
+		strncpy(sub_str_num,&read_buf_ptr[2],6);
+		sub_str_num[6] = '\0';
+
+		*adc_val_ptr = atoi(sub_str_num);
+
+		printf("Original string: %s \n", read_buf_ptr);
+		printf("Received adc value: %d , index: %d\n", *adc_val_ptr, *adc_buf_index_ptr);
+	}
+	
+	return recv_valid_adc_buf_value;
+}
+
+
+bool init_UART_PC_comm()
+{
+	try
+    {
+        // Open the Serial Port at the desired hardware port.
+        serial_port.Open(SERIAL_PORT_1) ;
+    }
+    catch (const LibSerial::OpenFailed&)
+    {
+        std::cerr << "The serial port did not open correctly." << std::endl ;
+        return false;
+    }
+
+    // Set the baud rate of the serial port.
+    serial_port.SetBaudRate(LibSerial::BaudRate::BAUD_115200) ;
+
+    // Set the number of data bits.
+    serial_port.SetCharacterSize(LibSerial::CharacterSize::CHAR_SIZE_8) ;
+
+    // Turn off hardware flow control.
+    serial_port.SetFlowControl(LibSerial::FlowControl::FLOW_CONTROL_NONE) ;
+
+    // Disable parity.
+    serial_port.SetParity(LibSerial::Parity::PARITY_NONE) ;
+    
+    // Set the number of stop bits.
+    serial_port.SetStopBits(LibSerial::StopBits::STOP_BITS_1) ;
+    
+    return true;
+}
+
+
+/**
+ * @brief This example demonstrates configuring a serial port and 
+ *        reading serial data.
+ */
+int testLibSerial()
+{
+    
+     
+    
+
+    // Successful program completion.
+    std::cout << "The example program successfully completed!" << std::endl ;
+    return EXIT_SUCCESS ;
+}
