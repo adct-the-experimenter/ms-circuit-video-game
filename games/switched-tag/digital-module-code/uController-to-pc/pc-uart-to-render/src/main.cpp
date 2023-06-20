@@ -9,25 +9,32 @@
 #include <cstdlib>
 #include <iostream>
 #include <unistd.h>
-
+#include <bitset>
 
 #include <signal.h> //for signal interrupt
 
 
 #include "raylib.h" //for drawing 
 
-//Tutorial code from 
-//https://blog.mbedded.ninja/programming/operating-systems/linux/linux-serial-ports-using-c-cpp/
+//for thread handling
+#include <thread>
+#include <mutex>
+#include <atomic>
+
+
+
 
 
 //variable used to indicate that program needs to quit
-int g_quitProgram = 0;
+//made atomic because it needs to be updated in main thread and adc update buffer thread
+static std::atomic<bool> g_quitProgram;
+
 
 // Handler for SIGINT, caused by
 // Ctrl-C at keyboard
 void handle_sigint(int sig)
 {
-	g_quitProgram = 1;
+	g_quitProgram.store(true);
     printf("Caught interrupt signal, signal %d\n", sig);
 }	
 
@@ -64,23 +71,15 @@ void render();
 enum class ADC_Channel : uint8_t {P1X=0, P1Y, P2X, CD, PD, P2Y, P2_IT, P1_IT };
 float adc_channel_info[NUM_ADC_INPUTS] = {0,0,0,0,0,0,0,0};
 
-int main() {
-  
-	if(!InitRaylib())
-	{
-		printf("Failed to initialize raylib!\n");
-		return -1;
-	}
-  
-	//if initialization of UART PC communication fails, exit program
-	if(!init_UART_PC_comm())
-	{
-	  printf("Failed to initialize PC UART communication!\n");
-	  return -1;
-	}
-	
-	
 
+//for granting exclusive access to adc buffer
+std::mutex mutex_adc_buf;
+
+//function to update adc buffer
+void UpdateADCBuffer();
+
+void UpdateADCBuffer()
+{
 	// Allocate memory for read buffer, set size according to your needs
 	char read_buf_adc_val[100];
 	uint8_t read_buf_adc_val_index = 0;
@@ -95,28 +94,100 @@ int main() {
 	// Specify a timeout value (in milliseconds) for UART communication.
 	size_t ms_timeout = 250;
 	
-	signal(SIGINT, handle_sigint);
-	while (!g_quitProgram)
+	//bitset to keep track of which channels have been updated
+	std::bitset <NUM_ADC_INPUTS> updated_channels_bitset;
+	updated_channels_bitset.reset();
+	
+	//second buffer to transfer data to main adc buffer
+	float temp_adc_buf[NUM_ADC_INPUTS] = {0,0,0,0,0,0,0,0};
+	
+	//loop forever
+	while(true)
 	{
+		//if quit program is true, then break out of this loop
+		if(g_quitProgram.load()){break;}
 		
 		//read adc channel and value from UART
 		read_adc_value_from_UART(&adc_val,&adc_channel,&ms_timeout,
 								&read_buf_adc_val[0], &read_buf_adc_val_index,
-							    &reader_state);
-	    	    
-	     //if adc read done
-	     if(reader_state == ReaderState::READ_DONE)
-	     {
-			 //update adc channel info
-			 adc_channel_info[adc_channel] = (float)adc_val;
-			 
-		 }
+								&reader_state);
+		
+		
+		 //if adc read done, upate temporary buffer and bitset
+		if(reader_state == ReaderState::READ_DONE)
+		{	 
+			 temp_adc_buf[adc_channel] = (float)adc_val;
+			 updated_channels_bitset.set(adc_channel);	 
+		}
 		 
+		
+		//update adc buffer if all channels in temporary buffer have been updated.
+		if(updated_channels_bitset.all())
+		{
+			//printf("All channels updated! buffer update unlocked.");
+			//put lock on adc buffer to update it
+			//critical section
+			mutex_adc_buf.lock();
+			
+			for(int i = 0; i < NUM_ADC_INPUTS; i++)
+			{
+				adc_channel_info[i] = temp_adc_buf[i];
+			}
+			
+			//unlock adc buffer 
+			mutex_adc_buf.unlock();
+			
+			updated_channels_bitset = 0; 
+			
+		}
+	}
+	
+	
+	
+}
+
+
+int main() {
+	
+	int num_concurrent_threads = std::thread::hardware_concurrency();
+	std::cout << "The number of concurrent threads is " << num_concurrent_threads << "\n";
+	
+	//if pc does not have at least 2 concurrent threads, exit program
+	if(num_concurrent_threads < 2)
+	{
+		printf("Error! Need CPU with 2 or more concurrent threads to run this program.");
+		return -1;
+	}
+  
+	if(!InitRaylib())
+	{
+		printf("Failed to initialize raylib!\n");
+		return -1;
+	}
+  
+	//if initialization of UART PC communication fails, exit program
+	if(!init_UART_PC_comm())
+	{
+	  printf("Failed to initialize PC UART communication!\n");
+	  return -1;
+	}
+	
+	//start thread to update adc buffer
+	std::thread adc_buf_reader(&UpdateADCBuffer);
+	
+	g_quitProgram.store(false);
+	
+	signal(SIGINT, handle_sigint);
+	
+	while (!g_quitProgram.load())
+	{	    
 	    //draw stuff.
-	    render();
+	    render();   
 	}
 	
 	CloseRaylib();
+	
+	adc_buf_reader.join();
 	
 	return 0; // success
   
@@ -131,31 +202,55 @@ void render()
 {
 	//P1X=0, P1Y, P2X, CD, PD, P2Y, P2_IT, P1_IT
 	
-	if(WindowShouldClose()){g_quitProgram = true;}
+	if(WindowShouldClose()){g_quitProgram.store(true);}
 	
-	float p1x = adc_channel_info[static_cast<int>(ADC_Channel::P1X)];
-	p1x = ( p1x / (float)(ADC_MAX_VAL - ADC_MIN_VAL) ) * screenWidth;
+	float p1x, p1y, p2x, p2y, collision_detect;
 	
-	float p1y = adc_channel_info[static_cast<int>(ADC_Channel::P1Y)];
-	p1y = ( p1y / (float)(ADC_MAX_VAL - ADC_MIN_VAL) ) * screenHeight;
+	//put lock on adc buffer to read from it without buffer being updated during read
+	//if not locked, block until mutex is available for use
+	//perform all reads from adc in one section
+	//critical section 
+	mutex_adc_buf.lock();
+	
+	p1x = adc_channel_info[static_cast<int>(ADC_Channel::P1X)];
+	p1y = adc_channel_info[static_cast<int>(ADC_Channel::P1Y)];
+	p2x = adc_channel_info[static_cast<int>(ADC_Channel::P2X)];
+	p2y = adc_channel_info[static_cast<int>(ADC_Channel::P2Y)];
+	collision_detect = adc_channel_info[static_cast<int>(ADC_Channel::CD)];
+	
+	//unlock adc buffer, let it be updated
+	mutex_adc_buf.unlock();
+	//printf("p1: %f , %f\n",p1x,p1y);
+	//printf("p2: %f , %f\n",p2x,p2y);
+	
+	//convert to screen coordinates
+	//reverse x coordinates because joystick direction is inversely proportional to adc value
+	p1x = screenWidth - ( p1x / (float)(ADC_MAX_VAL - ADC_MIN_VAL) )*screenWidth;
+	p1y = ( p1y / (float)(ADC_MAX_VAL - ADC_MIN_VAL) )*screenHeight;
+	p2x = screenWidth - ( p2x / (float)(ADC_MAX_VAL - ADC_MIN_VAL) )*screenWidth;
+	p2y = ( p2y / (float)(ADC_MAX_VAL - ADC_MIN_VAL) )*screenHeight;
 	
 	Vector2 p1Position = { p1x, p1y};
-	
-	float p2x = adc_channel_info[static_cast<int>(ADC_Channel::P2X)];
-	p2x = ( p2x / (float)(ADC_MAX_VAL - ADC_MIN_VAL) ) * screenWidth;
-	
-	float p2y = adc_channel_info[static_cast<int>(ADC_Channel::P2Y)];
-	p2y = ( p2y / (float)(ADC_MAX_VAL - ADC_MIN_VAL) ) * screenHeight;
-	
 	Vector2 p2Position = { p2x, p2y};
+	
+	//set color based on collision detect even
+	Color p1_color = RED;
+	Color p2_color = BLUE;
+	
+	if(collision_detect > 100)
+	{
+		p1_color = YELLOW;
+		p2_color = YELLOW;
+	}
 
 	BeginDrawing();
 
     ClearBackground(RAYWHITE);
 
-    DrawCircleV(p1Position, 50, RED);
+    DrawCircleV(p1Position, 10, p1_color);
     
-    DrawCircleV(p2Position, 50, BLUE);
+    DrawCircleV(p2Position, 10, p2_color);
+    
 
     EndDrawing();
 }
@@ -169,7 +264,9 @@ void read_adc_value_from_UART(uint16_t* adc_val_ptr, uint8_t* adc_channel_ptr, s
 	// Wait for data to be available at the serial port.
 	while(!serial_port.IsDataAvailable()) 
 	{
-		usleep(1000) ;
+		//make thread sleep for 1000 microseconds instead of whole CPU program
+		//read_adc_value_from_UART function is in use in adc buffer update thread
+		 std::this_thread::sleep_for(std::chrono::microseconds(1000));
 	}
 
 
@@ -313,7 +410,7 @@ bool InitRaylib()
 
     InitWindow(screenWidth, screenHeight, "Switched Tag Rendering Window");
 
-    //SetTargetFPS(120);               // Set our game to run at 60 frames-per-second
+    SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
     
     return true;
 }
