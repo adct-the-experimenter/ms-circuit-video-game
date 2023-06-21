@@ -21,7 +21,7 @@
 #include <mutex>
 #include <atomic>
 
-
+#include "moving_average.h"
 
 
 
@@ -198,6 +198,16 @@ void CloseRaylib()
 	 CloseWindow(); 
 }
 
+#define USE_MOVING_AVERAGE
+
+#define MOV_AVG_PERIOD 6
+MovingAverage mavg_p1x(MOV_AVG_PERIOD);
+MovingAverage mavg_p1y(MOV_AVG_PERIOD);
+MovingAverage mavg_p2x(MOV_AVG_PERIOD);
+MovingAverage mavg_p2y(MOV_AVG_PERIOD);
+
+const float circle_size = 15.0f;
+
 void render()
 {
 	//P1X=0, P1Y, P2X, CD, PD, P2Y, P2_IT, P1_IT
@@ -220,15 +230,36 @@ void render()
 	
 	//unlock adc buffer, let it be updated
 	mutex_adc_buf.unlock();
-	//printf("p1: %f , %f\n",p1x,p1y);
-	//printf("p2: %f , %f\n",p2x,p2y);
 	
 	//convert to screen coordinates
 	//reverse x coordinates because joystick direction is inversely proportional to adc value
-	p1x = screenWidth - ( p1x / (float)(ADC_MAX_VAL - ADC_MIN_VAL) )*screenWidth;
-	p1y = ( p1y / (float)(ADC_MAX_VAL - ADC_MIN_VAL) )*screenHeight;
-	p2x = screenWidth - ( p2x / (float)(ADC_MAX_VAL - ADC_MIN_VAL) )*screenWidth;
-	p2y = ( p2y / (float)(ADC_MAX_VAL - ADC_MIN_VAL) )*screenHeight;
+	p1x = ( p1x / (float)(ADC_MAX_VAL - ADC_MIN_VAL) )*screenWidth;
+	
+	#ifdef USE_MOVING_AVERAGE
+	mavg_p1x.addData(p1x);
+	p1x = mavg_p1x.getMean();
+	#endif
+	
+	p1y = screenHeight - ( p1y / (float)(ADC_MAX_VAL - ADC_MIN_VAL) )*screenHeight;
+	
+	#ifdef USE_MOVING_AVERAGE
+	mavg_p1y.addData(p1y);
+	p1y = mavg_p1y.getMean();
+	#endif
+	
+	p2x = ( p2x / (float)(ADC_MAX_VAL - ADC_MIN_VAL) )*screenWidth;
+	
+	#ifdef USE_MOVING_AVERAGE
+	mavg_p2x.addData(p2x);
+	p2x = mavg_p2x.getMean();
+	#endif
+	
+	p2y = screenHeight - ( p2y / (float)(ADC_MAX_VAL - ADC_MIN_VAL) )*screenHeight;
+	
+	#ifdef USE_MOVING_AVERAGE
+	mavg_p2y.addData(p2y);
+	p2y = mavg_p2y.getMean();
+	#endif
 	
 	Vector2 p1Position = { p1x, p1y};
 	Vector2 p2Position = { p2x, p2y};
@@ -237,7 +268,7 @@ void render()
 	Color p1_color = RED;
 	Color p2_color = BLUE;
 	
-	if(collision_detect > 100)
+	if(collision_detect > 3000)
 	{
 		p1_color = YELLOW;
 		p2_color = YELLOW;
@@ -247,9 +278,9 @@ void render()
 
     ClearBackground(RAYWHITE);
 
-    DrawCircleV(p1Position, 10, p1_color);
+    DrawCircleV(p1Position, circle_size, p1_color);
     
-    DrawCircleV(p2Position, 10, p2_color);
+    DrawCircleV(p2Position, circle_size, p2_color);
     
 
     EndDrawing();
