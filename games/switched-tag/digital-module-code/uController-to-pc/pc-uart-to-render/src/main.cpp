@@ -23,7 +23,7 @@
 
 #include "moving_average.h"
 
-
+//#define USING_DEBUG
 
 //variable used to indicate that program needs to quit
 //made atomic because it needs to be updated in main thread and adc update buffer thread
@@ -230,6 +230,35 @@ void render()
 	
 	//unlock adc buffer, let it be updated
 	mutex_adc_buf.unlock();
+	
+	#ifdef USING_DEBUG
+	char str[80];
+	
+	//DrawText(const char *text, int posX, int posY, int fontSize, Color color);
+	sprintf(str, "adc[p1x]: %f", adc_channel_info[static_cast<int>(ADC_Channel::P1X)]);
+	DrawText(str, 0, 0, 12, BLACK);
+
+	sprintf(str, "adc[p1y]: %f " , adc_channel_info[static_cast<int>(ADC_Channel::P1Y)] );
+	DrawText(str, 0, 20, 12, BLACK);
+	
+	sprintf(str, "adc[p2x]: %f " , adc_channel_info[static_cast<int>(ADC_Channel::P2X)] );
+	DrawText(str, 0, 40, 12, BLACK);
+	
+	sprintf(str, "adc[p2y]: %f " , adc_channel_info[static_cast<int>(ADC_Channel::P2Y)] );
+	DrawText(str, 0, 60, 12, BLACK);
+	
+	sprintf(str, "adc[p1_it]: %f " , adc_channel_info[static_cast<int>(ADC_Channel::P1_IT)] );
+	DrawText(str, 0, 80, 12, BLACK);
+	
+	sprintf(str, "adc[p2_it]: %f " , adc_channel_info[static_cast<int>(ADC_Channel::P2_IT)] );
+	DrawText(str, 0, 100, 12, BLACK);
+	
+	sprintf(str, "adc[cd]: %f " , adc_channel_info[static_cast<int>(ADC_Channel::CD)] );
+	DrawText(str, 0, 120, 12, BLACK);
+	
+	sprintf(str, "adc[pd]: %f " , adc_channel_info[static_cast<int>(ADC_Channel::PD)] );
+	DrawText(str, 0, 140, 12, BLACK);
+	#endif
 	
 	//convert to screen coordinates
 	//reverse x coordinates because joystick direction is inversely proportional to adc value
