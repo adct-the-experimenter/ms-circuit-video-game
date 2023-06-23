@@ -14,15 +14,21 @@ Setup code for when microcontroller is powering up
 Loop
 
 #ADC value retrieval process
-3. Select ADC
-4. Get value from ADC
-5. Store adc value to corresponding variable
-6. Repeat step 3 - 5 until all game variables initialized
+1. Select ADC
+2. Get value from ADC
+3. Store adc value to corresponding variable
+4. Repeat step 3 - 5 until all game variables initialized
+5. Filter adc data with FIR low-pass filter for more time accurate representation
+
+#Process data
+6. check if collision detection happened
+7. convert voltage representing player locations to a pixel location for player 
+8. determine state based on player it status and win
 
 #Drawing 
-7. Draw player 1, bright blue if it, blue if not it
-8. Draw player 2, red if it, brown if not it
-9. Draw pendelum
-10. Draw a flash on screen if collision happened
-11. Make background more white if player 1 wins, more black if player 2 wins
+9. Draw player 1, light blue if it, blue if not it
+10. Draw player 2, red if it, brown if not it
+11. Draw pendelum
+12. Draw a flash on screen if collision happened
+13. Make background more white if player 1 wins, more black if player 2 wins
 
