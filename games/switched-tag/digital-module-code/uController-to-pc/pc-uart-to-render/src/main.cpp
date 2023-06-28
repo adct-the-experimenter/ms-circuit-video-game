@@ -206,7 +206,7 @@ MovingAverage mavg_p1y(MOV_AVG_PERIOD);
 MovingAverage mavg_p2x(MOV_AVG_PERIOD);
 MovingAverage mavg_p2y(MOV_AVG_PERIOD);
 
-const float circle_size = 15.0f;
+const float circle_size = 10.0f;
 
 void render()
 {
@@ -293,7 +293,7 @@ void render()
 	Vector2 p1Position = { p1x, p1y};
 	Vector2 p2Position = { p2x, p2y};
 	
-	//set color based on collision detect even
+	//set color based on collision detect event
 	Color p1_color = RED;
 	Color p2_color = BLUE;
 	
@@ -302,14 +302,18 @@ void render()
 		p1_color = YELLOW;
 		p2_color = YELLOW;
 	}
+	
+	//set size based on which player is it.
+	float p1_size_mod = 0.02 * adc_channel_info[static_cast<int>(ADC_Channel::P1_IT)];
+	float p2_size_mod = 0.02 * adc_channel_info[static_cast<int>(ADC_Channel::P2_IT)];
 
 	BeginDrawing();
 
     ClearBackground(RAYWHITE);
 
-    DrawCircleV(p1Position, circle_size, p1_color);
+    DrawCircleV(p1Position, circle_size + p1_size_mod, p1_color);
     
-    DrawCircleV(p2Position, circle_size, p2_color);
+    DrawCircleV(p2Position, circle_size + p2_size_mod, p2_color);
     
 
     EndDrawing();
