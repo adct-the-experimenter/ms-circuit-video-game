@@ -5,8 +5,8 @@ Check It Player Determination
       plot v(/p2_it_button) v(/It_Player_Determination_/p2_it_value) v(/p1_it_button) v(/It_Player_Determination_/p1_it_value)
 
   -Check result of it player determination
-      plot v(/It_Player_Determination_/p2_it_value) v(/It_Player_Determination_/p1_it_value) v(/It_Player_Determination_/it_val_diff)+4
-      plot v(/It_Player_Determination_/it_val_diff) v(/It_Player_Determination_/it_dir_detect)+4 V(/p1_it_signal)+8 V(/p2_it_signal)+8
+      plot v(/it_player_determination_/p2_it_value) v(/it_player_determination_/p1_it_value) v(/it_player_determination_/it_val_diff)+4
+      plot v(/it_player_determination_/it_val_diff) v(/it_player_determination_/it_dir_detect)+4 V(/p1_it_signal)+8 V(/p2_it_signal)+8
 
 Check Winner Determination Circuit
   -Check winners and winner ignore signal

@@ -1,0 +1,14 @@
+version 2
+1
+9
+.tran 100m 2 0{return}.kicad adjustpaths{return}.save all{return}.probe alli
+3
+1
+V(/collision_detect_signal)
+ 
+1
+V(/p1x)
+ 
+1
+V(/p2x)
+ 
