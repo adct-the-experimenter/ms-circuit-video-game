@@ -1,0 +1,6 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "TLV9154_Quad_OPAMP")(type "KiCad")(uri "/home/pab/niche-engineer-proj/analog-circuit-game-console/KiCADv6/footprints.pretty")(options "")(descr ""))
+  (lib (name "pcb")(type "KiCad")(uri "/home/pab/niche-engineer-proj/analog-circuit-game-console/ms-circuit-video-games/games/switched-tag/analog-module/pcb.pretty")(options "")(descr ""))
+  (lib (name "switched-tag-footprint-lib")(type "KiCad")(uri "/home/pab/niche-engineer-proj/analog-circuit-game-console/ms-circuit-video-games/games/switched-tag/analog-module/pcb/switched-tag-footprint-lib.pretty")(options "")(descr ""))
+)
