@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export version="E">
   <design>
-    <source>/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/games/switched-tag/analog-module/kicad-circuit/switched-tag-circuit-kicad/switched-tag-circuit-kicad.kicad_sch</source>
-    <date>Wed Jun  8 11:49:50 2022</date>
-    <tool>Eeschema (6.0.4)</tool>
+    <source>/home/pab/niche-engineer-proj/analog-circuit-game-console/ms-circuit-video-games/games/switched-tag/analog-module/pcb/switched-tag-circuit-kicad/switched-tag-circuit-kicad.kicad_sch</source>
+    <date>Sat Aug  5 21:38:33 2023</date>
+    <tool>Eeschema 7.0.6</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title/>
@@ -40,25 +40,7 @@
         <comment number="9" value=""/>
       </title_block>
     </sheet>
-    <sheet number="3" name="/Switched Tag 2D Collision Detection/Switched Tag Absolute Zero Detector/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/232ad532-e223-4bc7-9019-cb297f6e6f82/">
-      <title_block>
-        <title/>
-        <company/>
-        <rev/>
-        <date/>
-        <source>switched-tag-abs-zero-detector.kicad_sch</source>
-        <comment number="1" value=""/>
-        <comment number="2" value=""/>
-        <comment number="3" value=""/>
-        <comment number="4" value=""/>
-        <comment number="5" value=""/>
-        <comment number="6" value=""/>
-        <comment number="7" value=""/>
-        <comment number="8" value=""/>
-        <comment number="9" value=""/>
-      </title_block>
-    </sheet>
-    <sheet number="4" name="/It Player Determination /" tstamps="/eda06b69-f42a-4703-ac3e-8e4c13148bd3/">
+    <sheet number="3" name="/It Player Determination /" tstamps="/eda06b69-f42a-4703-ac3e-8e4c13148bd3/">
       <title_block>
         <title/>
         <company/>
@@ -76,61 +58,7 @@
         <comment number="9" value=""/>
       </title_block>
     </sheet>
-    <sheet number="5" name="/It Player Determination /Sample-and-hold-player-one-it-value/" tstamps="/eda06b69-f42a-4703-ac3e-8e4c13148bd3/d1e92cde-8e29-44d0-a637-7e3ce0c46456/">
-      <title_block>
-        <title/>
-        <company/>
-        <rev/>
-        <date/>
-        <source>switched-tag-sample-and-hold.kicad_sch</source>
-        <comment number="1" value=""/>
-        <comment number="2" value=""/>
-        <comment number="3" value=""/>
-        <comment number="4" value=""/>
-        <comment number="5" value=""/>
-        <comment number="6" value=""/>
-        <comment number="7" value=""/>
-        <comment number="8" value=""/>
-        <comment number="9" value=""/>
-      </title_block>
-    </sheet>
-    <sheet number="6" name="/It Player Determination /Sample-and-hold-player-two-it-value/" tstamps="/eda06b69-f42a-4703-ac3e-8e4c13148bd3/32d970ae-9ef7-45ca-9966-ff1696c329b6/">
-      <title_block>
-        <title/>
-        <company/>
-        <rev/>
-        <date/>
-        <source>switched-tag-sample-and-hold.kicad_sch</source>
-        <comment number="1" value=""/>
-        <comment number="2" value=""/>
-        <comment number="3" value=""/>
-        <comment number="4" value=""/>
-        <comment number="5" value=""/>
-        <comment number="6" value=""/>
-        <comment number="7" value=""/>
-        <comment number="8" value=""/>
-        <comment number="9" value=""/>
-      </title_block>
-    </sheet>
-    <sheet number="7" name="/Switched Tag Pendelum Model/" tstamps="/68fe8760-7121-4ab9-a6d3-f164d1645af8/">
-      <title_block>
-        <title/>
-        <company/>
-        <rev/>
-        <date/>
-        <source>switched-tag-pendelum-model.kicad_sch</source>
-        <comment number="1" value=""/>
-        <comment number="2" value=""/>
-        <comment number="3" value=""/>
-        <comment number="4" value=""/>
-        <comment number="5" value=""/>
-        <comment number="6" value=""/>
-        <comment number="7" value=""/>
-        <comment number="8" value=""/>
-        <comment number="9" value=""/>
-      </title_block>
-    </sheet>
-    <sheet number="8" name="/Winner Determination Circuit/" tstamps="/5063b61c-13ff-4ac2-b013-ec01ef23a5a4/">
+    <sheet number="4" name="/Winner Determination Circuit/" tstamps="/5063b61c-13ff-4ac2-b013-ec01ef23a5a4/">
       <title_block>
         <title/>
         <company/>
@@ -153,1160 +81,837 @@
     <comp ref="V1">
       <value>VSIN</value>
       <fields>
-        <field name="Spice_Model">sin(1.5 1.5 10)</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Primitive">V</field>
+        <field name="Sim.Device">V</field>
+        <field name="Sim.Params">dc=1.5 ampl=1.5 f=10 ac=1</field>
+        <field name="Sim.Pins">1=+ 2=-</field>
+        <field name="Sim.Type">SIN</field>
       </fields>
       <libsource lib="Simulation_SPICE" part="VSIN" description="Voltage source, sinusoidal"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Primitive" value="V"/>
-      <property name="Spice_Model" value="sin(1.5 1.5 10)"/>
+      <property name="Sim.Device" value="V"/>
+      <property name="Sim.Type" value="SIN"/>
+      <property name="Sim.Params" value="dc=1.5 ampl=1.5 f=10 ac=1"/>
+      <property name="Sim.Pins" value="1=+ 2=-"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="switched-tag-circuit-kicad.kicad_sch"/>
+      <property name="ki_description" value="Voltage source, sinusoidal"/>
+      <property name="ki_keywords" value="simulation ac vac"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>dda1ed80-7941-46a5-aac9-8cedaa8fdad0</tstamps>
     </comp>
     <comp ref="V2">
       <value>VPULSE</value>
       <fields>
-        <field name="Spice_Model">pulse(0 3 2 0.1 0.1 1 2)</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Primitive">V</field>
+        <field name="Sim.Device">V</field>
+        <field name="Sim.Params">y1=0 y2=1 td=0.15 tr=2m tf=2m tw=0.5 per=1</field>
+        <field name="Sim.Pins">1=+ 2=-</field>
+        <field name="Sim.Type">PULSE</field>
       </fields>
       <libsource lib="Simulation_SPICE" part="VPULSE" description="Voltage source, pulse"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Primitive" value="V"/>
-      <property name="Spice_Model" value="pulse(0 3 2 0.1 0.1 1 2)"/>
+      <property name="Sim.Device" value="V"/>
+      <property name="Sim.Type" value="PULSE"/>
+      <property name="Sim.Params" value="y1=0 y2=1 td=0.15 tr=2m tf=2m tw=0.5 per=1"/>
+      <property name="Sim.Pins" value="1=+ 2=-"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="switched-tag-circuit-kicad.kicad_sch"/>
+      <property name="ki_description" value="Voltage source, pulse"/>
+      <property name="ki_keywords" value="simulation"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>d4c68aeb-46da-48e6-a4e6-185b0a46e78c</tstamps>
     </comp>
     <comp ref="V3">
       <value>VPULSE</value>
       <fields>
-        <field name="Spice_Model">pulse(0 3 1 0.1 0.1 1 2)</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Primitive">V</field>
+        <field name="Sim.Device">V</field>
+        <field name="Sim.Params">y1=0 y2=1 td=0.5 tr=2m tf=2m tw=0.5 per=1</field>
+        <field name="Sim.Pins">1=+ 2=-</field>
+        <field name="Sim.Type">PULSE</field>
       </fields>
       <libsource lib="Simulation_SPICE" part="VPULSE" description="Voltage source, pulse"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Primitive" value="V"/>
-      <property name="Spice_Model" value="pulse(0 3 1 0.1 0.1 1 2)"/>
+      <property name="Sim.Device" value="V"/>
+      <property name="Sim.Type" value="PULSE"/>
+      <property name="Sim.Params" value="y1=0 y2=1 td=0.5 tr=2m tf=2m tw=0.5 per=1"/>
+      <property name="Sim.Pins" value="1=+ 2=-"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="switched-tag-circuit-kicad.kicad_sch"/>
+      <property name="ki_description" value="Voltage source, pulse"/>
+      <property name="ki_keywords" value="simulation"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>1d794e8d-b635-430f-85ea-d72e963df94e</tstamps>
     </comp>
     <comp ref="V4">
-      <value>VDC</value>
+      <value>-3.3</value>
       <fields>
-        <field name="Spice_Model">dc(-3.3)</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Primitive">V</field>
+        <field name="Sim.Device">V</field>
+        <field name="Sim.Pins">1=+ 2=-</field>
+        <field name="Sim.Type">DC</field>
       </fields>
       <libsource lib="Simulation_SPICE" part="VDC" description="Voltage source, DC"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Primitive" value="V"/>
-      <property name="Spice_Model" value="dc(-3.3)"/>
+      <property name="Sim.Device" value="V"/>
+      <property name="Sim.Type" value="DC"/>
+      <property name="Sim.Pins" value="1=+ 2=-"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="switched-tag-circuit-kicad.kicad_sch"/>
+      <property name="ki_description" value="Voltage source, DC"/>
+      <property name="ki_keywords" value="simulation"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>a316c3bb-d6e0-43ff-81ac-df45136e5b97</tstamps>
     </comp>
     <comp ref="V5">
-      <value>VDC</value>
+      <value>3.3</value>
       <fields>
-        <field name="Spice_Model">dc(3.3)</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Primitive">V</field>
+        <field name="Sim.Device">V</field>
+        <field name="Sim.Pins">1=+ 2=-</field>
+        <field name="Sim.Type">DC</field>
       </fields>
       <libsource lib="Simulation_SPICE" part="VDC" description="Voltage source, DC"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Primitive" value="V"/>
-      <property name="Spice_Model" value="dc(3.3)"/>
+      <property name="Sim.Device" value="V"/>
+      <property name="Sim.Type" value="DC"/>
+      <property name="Sim.Pins" value="1=+ 2=-"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="switched-tag-circuit-kicad.kicad_sch"/>
+      <property name="ki_description" value="Voltage source, DC"/>
+      <property name="ki_keywords" value="simulation"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>57824045-fda2-4d7c-9a10-82e8e242782c</tstamps>
     </comp>
     <comp ref="V6">
-      <value>VDC</value>
+      <value>1</value>
       <fields>
-        <field name="Spice_Model">dc(1)</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Primitive">V</field>
+        <field name="Sim.Device">V</field>
+        <field name="Sim.Pins">1=+ 2=-</field>
+        <field name="Sim.Type">DC</field>
       </fields>
       <libsource lib="Simulation_SPICE" part="VDC" description="Voltage source, DC"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Primitive" value="V"/>
-      <property name="Spice_Model" value="dc(1)"/>
+      <property name="Sim.Device" value="V"/>
+      <property name="Sim.Type" value="DC"/>
+      <property name="Sim.Pins" value="1=+ 2=-"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="switched-tag-circuit-kicad.kicad_sch"/>
+      <property name="ki_description" value="Voltage source, DC"/>
+      <property name="ki_keywords" value="simulation"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>64263d5c-9427-4c92-a73a-afe8e63e20fb</tstamps>
     </comp>
     <comp ref="V7">
-      <value>VDC</value>
+      <value>1</value>
       <fields>
-        <field name="Spice_Model">dc(1)</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Primitive">V</field>
+        <field name="Sim.Device">V</field>
+        <field name="Sim.Pins">1=+ 2=-</field>
+        <field name="Sim.Type">DC</field>
       </fields>
       <libsource lib="Simulation_SPICE" part="VDC" description="Voltage source, DC"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Primitive" value="V"/>
-      <property name="Spice_Model" value="dc(1)"/>
+      <property name="Sim.Device" value="V"/>
+      <property name="Sim.Type" value="DC"/>
+      <property name="Sim.Pins" value="1=+ 2=-"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="switched-tag-circuit-kicad.kicad_sch"/>
+      <property name="ki_description" value="Voltage source, DC"/>
+      <property name="ki_keywords" value="simulation"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>47655e07-a214-4b18-b59f-bb4950140d72</tstamps>
     </comp>
     <comp ref="V8">
-      <value>VDC</value>
+      <value>1</value>
       <fields>
-        <field name="Spice_Model">dc(1)</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Primitive">V</field>
+        <field name="Sim.Device">V</field>
+        <field name="Sim.Pins">1=+ 2=-</field>
+        <field name="Sim.Type">DC</field>
       </fields>
       <libsource lib="Simulation_SPICE" part="VDC" description="Voltage source, DC"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Primitive" value="V"/>
-      <property name="Spice_Model" value="dc(1)"/>
+      <property name="Sim.Device" value="V"/>
+      <property name="Sim.Type" value="DC"/>
+      <property name="Sim.Pins" value="1=+ 2=-"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="switched-tag-circuit-kicad.kicad_sch"/>
+      <property name="ki_description" value="Voltage source, DC"/>
+      <property name="ki_keywords" value="simulation"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>a474115f-6802-4663-a588-f5be744cf577</tstamps>
     </comp>
+    <comp ref="D1">
+      <value>D1N914</value>
+      <footprint>Diode_SMD:D_0603_1608Metric</footprint>
+      <datasheet>1n914</datasheet>
+      <fields>
+        <field name="Sim.Library">${SPICE_MODEL_DIR_REL}/1N914.lib</field>
+        <field name="Sim.Name">D1N914</field>
+        <field name="Sim.Pins">2=1 1=2</field>
+      </fields>
+      <libsource lib="Device" part="D" description="Diode"/>
+      <property name="Sim.Library" value="${SPICE_MODEL_DIR_REL}/1N914.lib"/>
+      <property name="Sim.Name" value="D1N914"/>
+      <property name="Sim.Pins" value="2=1 1=2"/>
+      <property name="Sheetname" value="Switched Tag 2D Collision Detection"/>
+      <property name="Sheetfile" value="switched-tag-collision-detection.kicad_sch"/>
+      <property name="ki_description" value="Diode"/>
+      <property name="ki_keywords" value="diode"/>
+      <sheetpath names="/Switched Tag 2D Collision Detection/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/"/>
+      <tstamps>ff5ac34c-cd45-4f50-bf00-86eec88f19f6</tstamps>
+    </comp>
+    <comp ref="D2">
+      <value>D1N914</value>
+      <footprint>Diode_SMD:D_0603_1608Metric</footprint>
+      <datasheet>1n914</datasheet>
+      <fields>
+        <field name="Sim.Library">${SPICE_MODEL_DIR_REL}/1N914.lib</field>
+        <field name="Sim.Name">D1N914</field>
+        <field name="Sim.Pins">2=1 1=2</field>
+      </fields>
+      <libsource lib="Device" part="D" description="Diode"/>
+      <property name="Sim.Library" value="${SPICE_MODEL_DIR_REL}/1N914.lib"/>
+      <property name="Sim.Name" value="D1N914"/>
+      <property name="Sim.Pins" value="2=1 1=2"/>
+      <property name="Sheetname" value="Switched Tag 2D Collision Detection"/>
+      <property name="Sheetfile" value="switched-tag-collision-detection.kicad_sch"/>
+      <property name="ki_description" value="Diode"/>
+      <property name="ki_keywords" value="diode"/>
+      <sheetpath names="/Switched Tag 2D Collision Detection/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/"/>
+      <tstamps>ed3450bd-ec8d-448b-b554-33012bf4757b</tstamps>
+    </comp>
+    <comp ref="D3">
+      <value>D1N914</value>
+      <footprint>Diode_SMD:D_0603_1608Metric</footprint>
+      <datasheet>1n914</datasheet>
+      <fields>
+        <field name="Sim.Library">${SPICE_MODEL_DIR_REL}/1N914.lib</field>
+        <field name="Sim.Name">D1N914</field>
+        <field name="Sim.Pins">2=1 1=2</field>
+      </fields>
+      <libsource lib="Device" part="D" description="Diode"/>
+      <property name="Sim.Library" value="${SPICE_MODEL_DIR_REL}/1N914.lib"/>
+      <property name="Sim.Name" value="D1N914"/>
+      <property name="Sim.Pins" value="2=1 1=2"/>
+      <property name="Sheetname" value="Switched Tag 2D Collision Detection"/>
+      <property name="Sheetfile" value="switched-tag-collision-detection.kicad_sch"/>
+      <property name="ki_description" value="Diode"/>
+      <property name="ki_keywords" value="diode"/>
+      <sheetpath names="/Switched Tag 2D Collision Detection/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/"/>
+      <tstamps>7da236e7-178b-47e8-b84a-745d325e96de</tstamps>
+    </comp>
+    <comp ref="D4">
+      <value>D1N914</value>
+      <footprint>Diode_SMD:D_0603_1608Metric</footprint>
+      <datasheet>1n914</datasheet>
+      <fields>
+        <field name="Sim.Library">${SPICE_MODEL_DIR_REL}/1N914.lib</field>
+        <field name="Sim.Name">D1N914</field>
+        <field name="Sim.Pins">2=1 1=2</field>
+      </fields>
+      <libsource lib="Device" part="D" description="Diode"/>
+      <property name="Sim.Library" value="${SPICE_MODEL_DIR_REL}/1N914.lib"/>
+      <property name="Sim.Name" value="D1N914"/>
+      <property name="Sim.Pins" value="2=1 1=2"/>
+      <property name="Sheetname" value="Switched Tag 2D Collision Detection"/>
+      <property name="Sheetfile" value="switched-tag-collision-detection.kicad_sch"/>
+      <property name="ki_description" value="Diode"/>
+      <property name="ki_keywords" value="diode"/>
+      <sheetpath names="/Switched Tag 2D Collision Detection/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/"/>
+      <tstamps>c0be8e82-b322-4b83-9b81-2e176c8287ce</tstamps>
+    </comp>
+    <comp ref="D5">
+      <value>D1N914</value>
+      <footprint>Diode_SMD:D_0603_1608Metric</footprint>
+      <datasheet>1n914</datasheet>
+      <fields>
+        <field name="Sim.Library">${SPICE_MODEL_DIR_REL}/1N914.lib</field>
+        <field name="Sim.Name">D1N914</field>
+        <field name="Sim.Pins">2=1 1=2</field>
+      </fields>
+      <libsource lib="Device" part="D" description="Diode"/>
+      <property name="Sim.Library" value="${SPICE_MODEL_DIR_REL}/1N914.lib"/>
+      <property name="Sim.Name" value="D1N914"/>
+      <property name="Sim.Pins" value="2=1 1=2"/>
+      <property name="Sheetname" value="Switched Tag 2D Collision Detection"/>
+      <property name="Sheetfile" value="switched-tag-collision-detection.kicad_sch"/>
+      <property name="ki_description" value="Diode"/>
+      <property name="ki_keywords" value="diode"/>
+      <sheetpath names="/Switched Tag 2D Collision Detection/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/"/>
+      <tstamps>d288feec-a848-4cdc-8947-60dda0521ed8</tstamps>
+    </comp>
     <comp ref="R1">
       <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="Switched Tag 2D Collision Detection"/>
       <property name="Sheetfile" value="switched-tag-collision-detection.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/Switched Tag 2D Collision Detection/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/"/>
       <tstamps>89f45513-38bc-4933-8fa7-87bd7d888cf1</tstamps>
     </comp>
     <comp ref="R2">
       <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="Switched Tag 2D Collision Detection"/>
       <property name="Sheetfile" value="switched-tag-collision-detection.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/Switched Tag 2D Collision Detection/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/"/>
       <tstamps>8ebe2e00-cbcf-4d5a-b153-57ed755c07e7</tstamps>
     </comp>
     <comp ref="R3">
       <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="Switched Tag 2D Collision Detection"/>
       <property name="Sheetfile" value="switched-tag-collision-detection.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/Switched Tag 2D Collision Detection/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/"/>
       <tstamps>e49992ff-9587-4003-ba87-7aadb3eb0f6c</tstamps>
     </comp>
     <comp ref="R4">
       <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="Switched Tag 2D Collision Detection"/>
       <property name="Sheetfile" value="switched-tag-collision-detection.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/Switched Tag 2D Collision Detection/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/"/>
       <tstamps>ce29ab16-9f36-42dd-bd04-7039c5473e9c</tstamps>
     </comp>
     <comp ref="R5">
       <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="Switched Tag 2D Collision Detection"/>
       <property name="Sheetfile" value="switched-tag-collision-detection.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/Switched Tag 2D Collision Detection/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/"/>
       <tstamps>cd428ac6-827b-484c-934a-4447e63d6350</tstamps>
     </comp>
     <comp ref="R6">
       <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="Switched Tag 2D Collision Detection"/>
       <property name="Sheetfile" value="switched-tag-collision-detection.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/Switched Tag 2D Collision Detection/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/"/>
       <tstamps>85d7d879-15d2-41a3-9d25-332747cb22cc</tstamps>
     </comp>
     <comp ref="R7">
       <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="Switched Tag 2D Collision Detection"/>
       <property name="Sheetfile" value="switched-tag-collision-detection.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/Switched Tag 2D Collision Detection/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/"/>
       <tstamps>445460a5-1dd0-4781-8366-39528a36a9b9</tstamps>
     </comp>
     <comp ref="R8">
       <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="Switched Tag 2D Collision Detection"/>
       <property name="Sheetfile" value="switched-tag-collision-detection.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/Switched Tag 2D Collision Detection/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/"/>
       <tstamps>4eb11581-4309-45d5-a212-45ce845a67b4</tstamps>
     </comp>
     <comp ref="R9">
       <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="Switched Tag 2D Collision Detection"/>
       <property name="Sheetfile" value="switched-tag-collision-detection.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/Switched Tag 2D Collision Detection/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/"/>
-      <tstamps>3a7f8240-9473-49fa-b8f1-ca63c2d32fec</tstamps>
+      <tstamps>88a1c28c-7661-4900-b247-213b2b2a1a5f</tstamps>
     </comp>
     <comp ref="R10">
       <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="Switched Tag 2D Collision Detection"/>
       <property name="Sheetfile" value="switched-tag-collision-detection.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/Switched Tag 2D Collision Detection/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/"/>
-      <tstamps>b31233f9-2da6-4a1a-a3d8-a08f13d9a8b2</tstamps>
+      <tstamps>baec9785-f5b7-40cd-96ca-1dae8556dee4</tstamps>
     </comp>
     <comp ref="R11">
       <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="Switched Tag 2D Collision Detection"/>
       <property name="Sheetfile" value="switched-tag-collision-detection.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/Switched Tag 2D Collision Detection/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/"/>
-      <tstamps>1be8af48-12e4-40cf-9887-335d392d9a42</tstamps>
+      <tstamps>59923f39-9e46-485f-88e4-dec003a7d790</tstamps>
     </comp>
     <comp ref="R12">
       <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="Switched Tag 2D Collision Detection"/>
       <property name="Sheetfile" value="switched-tag-collision-detection.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/Switched Tag 2D Collision Detection/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/"/>
-      <tstamps>1789bd0a-9e69-4e8a-9201-b62ae88b4c90</tstamps>
+      <tstamps>55a4c04f-ee68-4ef9-9c79-979c1d404af2</tstamps>
     </comp>
     <comp ref="R13">
-      <value>5k</value>
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="Switched Tag 2D Collision Detection"/>
       <property name="Sheetfile" value="switched-tag-collision-detection.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/Switched Tag 2D Collision Detection/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/"/>
-      <tstamps>db87089b-6373-4ba3-a2ff-5a1e38ab7c68</tstamps>
+      <tstamps>c40f898f-e946-4c4a-a899-c5b2983a280a</tstamps>
     </comp>
     <comp ref="R14">
       <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="Switched Tag 2D Collision Detection"/>
       <property name="Sheetfile" value="switched-tag-collision-detection.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/Switched Tag 2D Collision Detection/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/"/>
-      <tstamps>9af5fd50-6d98-4789-9b0e-107b5e237093</tstamps>
+      <tstamps>1b9188bd-8e6d-44e7-aa21-811e112ac645</tstamps>
     </comp>
     <comp ref="R15">
-      <value>10k</value>
+      <value>5k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="Switched Tag 2D Collision Detection"/>
       <property name="Sheetfile" value="switched-tag-collision-detection.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/Switched Tag 2D Collision Detection/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/"/>
-      <tstamps>66344d8e-acc9-46fd-b5a4-04485b32732e</tstamps>
+      <tstamps>039a8de1-0cfb-4dbe-816d-0787cf2f8b25</tstamps>
     </comp>
     <comp ref="R16">
-      <value>10k</value>
+      <value>5k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="Switched Tag 2D Collision Detection"/>
       <property name="Sheetfile" value="switched-tag-collision-detection.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/Switched Tag 2D Collision Detection/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/"/>
-      <tstamps>440d8f86-1c26-425a-bc7a-861d3f018172</tstamps>
+      <tstamps>58d66850-ad54-403a-9e80-e49e6cbdf767</tstamps>
     </comp>
     <comp ref="R17">
       <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="Switched Tag 2D Collision Detection"/>
       <property name="Sheetfile" value="switched-tag-collision-detection.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/Switched Tag 2D Collision Detection/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/"/>
-      <tstamps>cb92e7ca-a86a-4fc1-b9e1-7efb4a75e0bd</tstamps>
+      <tstamps>81b1e5fa-ec1a-44b4-a46d-65856f1bf063</tstamps>
     </comp>
     <comp ref="R18">
       <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="Switched Tag 2D Collision Detection"/>
       <property name="Sheetfile" value="switched-tag-collision-detection.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/Switched Tag 2D Collision Detection/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/"/>
-      <tstamps>1bc07873-b6dc-46c0-944b-28ec3299a9f3</tstamps>
+      <tstamps>720596de-fb0a-4cfd-b421-46c3f321a1fa</tstamps>
     </comp>
     <comp ref="R19">
       <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="Switched Tag 2D Collision Detection"/>
       <property name="Sheetfile" value="switched-tag-collision-detection.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/Switched Tag 2D Collision Detection/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/"/>
-      <tstamps>f7094021-642e-42be-8197-2b375f207e2f</tstamps>
+      <tstamps>cb92e7ca-a86a-4fc1-b9e1-7efb4a75e0bd</tstamps>
     </comp>
     <comp ref="R20">
       <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="Switched Tag 2D Collision Detection"/>
       <property name="Sheetfile" value="switched-tag-collision-detection.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/Switched Tag 2D Collision Detection/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/"/>
-      <tstamps>02992ddb-5700-4626-8c7d-81194c892f94</tstamps>
-    </comp>
-    <comp ref="U1">
-      <value>OPAMP</value>
-      <fields>
-        <field name="Spice_Lib_File">/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/ad8031.mod</field>
-        <field name="Spice_Model">AD8031</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Node_Sequence">1 2 4 5 3</field>
-        <field name="Spice_Primitive">X</field>
-      </fields>
-      <libsource lib="Simulation_SPICE" part="OPAMP" description="Operational amplifier, single, node sequence=1:+ 2:- 3:OUT 4:V+ 5:V-"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Primitive" value="X"/>
-      <property name="Spice_Model" value="AD8031"/>
-      <property name="Spice_Lib_File" value="/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/ad8031.mod"/>
-      <property name="Spice_Node_Sequence" value="1 2 4 5 3"/>
-      <property name="Sheetname" value="Switched Tag 2D Collision Detection"/>
-      <property name="Sheetfile" value="switched-tag-collision-detection.kicad_sch"/>
-      <sheetpath names="/Switched Tag 2D Collision Detection/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/"/>
-      <tstamps>725b7088-5e5d-400d-8e81-45ca4eecb09a</tstamps>
-    </comp>
-    <comp ref="U2">
-      <value>OPAMP</value>
-      <fields>
-        <field name="Spice_Lib_File">/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/ad8031.mod</field>
-        <field name="Spice_Model">AD8031</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Node_Sequence">1 2 4 5 3</field>
-        <field name="Spice_Primitive">X</field>
-      </fields>
-      <libsource lib="Simulation_SPICE" part="OPAMP" description="Operational amplifier, single, node sequence=1:+ 2:- 3:OUT 4:V+ 5:V-"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Primitive" value="X"/>
-      <property name="Spice_Model" value="AD8031"/>
-      <property name="Spice_Lib_File" value="/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/ad8031.mod"/>
-      <property name="Spice_Node_Sequence" value="1 2 4 5 3"/>
-      <property name="Sheetname" value="Switched Tag 2D Collision Detection"/>
-      <property name="Sheetfile" value="switched-tag-collision-detection.kicad_sch"/>
-      <sheetpath names="/Switched Tag 2D Collision Detection/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/"/>
-      <tstamps>33045352-d786-424a-885a-3e42dc6fbfea</tstamps>
-    </comp>
-    <comp ref="U3">
-      <value>OPAMP</value>
-      <fields>
-        <field name="Spice_Lib_File">/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/ad8031.mod</field>
-        <field name="Spice_Model">AD8031</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Node_Sequence">1 2 4 5 3</field>
-        <field name="Spice_Primitive">X</field>
-      </fields>
-      <libsource lib="Simulation_SPICE" part="OPAMP" description="Operational amplifier, single, node sequence=1:+ 2:- 3:OUT 4:V+ 5:V-"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Primitive" value="X"/>
-      <property name="Spice_Model" value="AD8031"/>
-      <property name="Spice_Lib_File" value="/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/ad8031.mod"/>
-      <property name="Spice_Node_Sequence" value="1 2 4 5 3"/>
-      <property name="Sheetname" value="Switched Tag 2D Collision Detection"/>
-      <property name="Sheetfile" value="switched-tag-collision-detection.kicad_sch"/>
-      <sheetpath names="/Switched Tag 2D Collision Detection/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/"/>
-      <tstamps>243266d0-4e4c-468d-9625-8577a14fc2f7</tstamps>
-    </comp>
-    <comp ref="U4">
-      <value>OPAMP</value>
-      <fields>
-        <field name="Spice_Lib_File">/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/ad8031.mod</field>
-        <field name="Spice_Model">AD8031</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Node_Sequence">1 2 4 5 3</field>
-        <field name="Spice_Primitive">X</field>
-      </fields>
-      <libsource lib="Simulation_SPICE" part="OPAMP" description="Operational amplifier, single, node sequence=1:+ 2:- 3:OUT 4:V+ 5:V-"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Primitive" value="X"/>
-      <property name="Spice_Model" value="AD8031"/>
-      <property name="Spice_Lib_File" value="/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/ad8031.mod"/>
-      <property name="Spice_Node_Sequence" value="1 2 4 5 3"/>
-      <property name="Sheetname" value="Switched Tag 2D Collision Detection"/>
-      <property name="Sheetfile" value="switched-tag-collision-detection.kicad_sch"/>
-      <sheetpath names="/Switched Tag 2D Collision Detection/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/"/>
-      <tstamps>50d2f82d-d227-4857-b422-92838b2097f9</tstamps>
-    </comp>
-    <comp ref="U5">
-      <value>OPAMP</value>
-      <fields>
-        <field name="Spice_Lib_File">/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/ad8031.mod</field>
-        <field name="Spice_Model">AD8031</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Node_Sequence">1 2 4 5 3</field>
-        <field name="Spice_Primitive">X</field>
-      </fields>
-      <libsource lib="Simulation_SPICE" part="OPAMP" description="Operational amplifier, single, node sequence=1:+ 2:- 3:OUT 4:V+ 5:V-"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Primitive" value="X"/>
-      <property name="Spice_Model" value="AD8031"/>
-      <property name="Spice_Lib_File" value="/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/ad8031.mod"/>
-      <property name="Spice_Node_Sequence" value="1 2 4 5 3"/>
-      <property name="Sheetname" value="Switched Tag 2D Collision Detection"/>
-      <property name="Sheetfile" value="switched-tag-collision-detection.kicad_sch"/>
-      <sheetpath names="/Switched Tag 2D Collision Detection/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/"/>
-      <tstamps>21eab251-3aa9-4907-be77-890e0aa2c5d8</tstamps>
-    </comp>
-    <comp ref="C1">
-      <value>0.1u</value>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <property name="Sheetname" value="Switched Tag Absolute Zero Detector"/>
-      <property name="Sheetfile" value="switched-tag-abs-zero-detector.kicad_sch"/>
-      <sheetpath names="/Switched Tag 2D Collision Detection/Switched Tag Absolute Zero Detector/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/232ad532-e223-4bc7-9019-cb297f6e6f82/"/>
-      <tstamps>9c760e5e-bad2-4de5-be8f-7d1227e683f4</tstamps>
-    </comp>
-    <comp ref="C2">
-      <value>100p</value>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <property name="Sheetname" value="Switched Tag Absolute Zero Detector"/>
-      <property name="Sheetfile" value="switched-tag-abs-zero-detector.kicad_sch"/>
-      <sheetpath names="/Switched Tag 2D Collision Detection/Switched Tag Absolute Zero Detector/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/232ad532-e223-4bc7-9019-cb297f6e6f82/"/>
-      <tstamps>c8ef7749-4f79-47d2-9046-baeaab03ba56</tstamps>
-    </comp>
-    <comp ref="D1">
-      <value>D1N914</value>
-      <datasheet>1n914</datasheet>
-      <fields>
-        <field name="Spice_Lib_File">../../../../../spice-models/1N914.lib</field>
-        <field name="Spice_Model">D1N914</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Node_Sequence">2 1</field>
-        <field name="Spice_Primitive">D</field>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="Spice_Lib_File" value="../../../../../spice-models/1N914.lib"/>
-      <property name="Spice_Model" value="D1N914"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Primitive" value="D"/>
-      <property name="Spice_Node_Sequence" value="2 1"/>
-      <property name="Sheetname" value="Switched Tag Absolute Zero Detector"/>
-      <property name="Sheetfile" value="switched-tag-abs-zero-detector.kicad_sch"/>
-      <sheetpath names="/Switched Tag 2D Collision Detection/Switched Tag Absolute Zero Detector/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/232ad532-e223-4bc7-9019-cb297f6e6f82/"/>
-      <tstamps>92593115-35dd-4395-aa35-7ff16ce69b5a</tstamps>
-    </comp>
-    <comp ref="D2">
-      <value>D1N914</value>
-      <datasheet>1n914</datasheet>
-      <fields>
-        <field name="Spice_Lib_File">../../../../../spice-models/1N914.lib</field>
-        <field name="Spice_Model">D1N914</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Node_Sequence">2 1</field>
-        <field name="Spice_Primitive">D</field>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="Spice_Lib_File" value="../../../../../spice-models/1N914.lib"/>
-      <property name="Spice_Model" value="D1N914"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Primitive" value="D"/>
-      <property name="Spice_Node_Sequence" value="2 1"/>
-      <property name="Sheetname" value="Switched Tag Absolute Zero Detector"/>
-      <property name="Sheetfile" value="switched-tag-abs-zero-detector.kicad_sch"/>
-      <sheetpath names="/Switched Tag 2D Collision Detection/Switched Tag Absolute Zero Detector/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/232ad532-e223-4bc7-9019-cb297f6e6f82/"/>
-      <tstamps>7287b5d5-4a14-4795-a4b7-c7ff5f5e6716</tstamps>
-    </comp>
-    <comp ref="D3">
-      <value>D1N914</value>
-      <datasheet>1n914</datasheet>
-      <fields>
-        <field name="Spice_Lib_File">../../../../../spice-models/1N914.lib</field>
-        <field name="Spice_Model">D1N914</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Node_Sequence">2 1</field>
-        <field name="Spice_Primitive">D</field>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="Spice_Primitive" value="D"/>
-      <property name="Spice_Model" value="D1N914"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Lib_File" value="../../../../../spice-models/1N914.lib"/>
-      <property name="Spice_Node_Sequence" value="2 1"/>
-      <property name="Sheetname" value="Switched Tag Absolute Zero Detector"/>
-      <property name="Sheetfile" value="switched-tag-abs-zero-detector.kicad_sch"/>
-      <sheetpath names="/Switched Tag 2D Collision Detection/Switched Tag Absolute Zero Detector/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/232ad532-e223-4bc7-9019-cb297f6e6f82/"/>
-      <tstamps>c5bdb9a0-cab7-4690-b5ab-145ccfee738d</tstamps>
-    </comp>
-    <comp ref="D4">
-      <value>D1N914</value>
-      <datasheet>1n914</datasheet>
-      <fields>
-        <field name="Spice_Lib_File">../../../../../spice-models/1N914.lib</field>
-        <field name="Spice_Model">D1N914</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Node_Sequence">2 1</field>
-        <field name="Spice_Primitive">D</field>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="Spice_Lib_File" value="../../../../../spice-models/1N914.lib"/>
-      <property name="Spice_Model" value="D1N914"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Primitive" value="D"/>
-      <property name="Spice_Node_Sequence" value="2 1"/>
-      <property name="Sheetname" value="Switched Tag Absolute Zero Detector"/>
-      <property name="Sheetfile" value="switched-tag-abs-zero-detector.kicad_sch"/>
-      <sheetpath names="/Switched Tag 2D Collision Detection/Switched Tag Absolute Zero Detector/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/232ad532-e223-4bc7-9019-cb297f6e6f82/"/>
-      <tstamps>33d24a37-7dfc-447f-a5cf-10500910614a</tstamps>
+      <tstamps>1bc07873-b6dc-46c0-944b-28ec3299a9f3</tstamps>
     </comp>
     <comp ref="R21">
-      <value>10k</value>
+      <value>5k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <libsource lib="Device" part="R" description="Resistor"/>
-      <property name="Sheetname" value="Switched Tag Absolute Zero Detector"/>
-      <property name="Sheetfile" value="switched-tag-abs-zero-detector.kicad_sch"/>
-      <sheetpath names="/Switched Tag 2D Collision Detection/Switched Tag Absolute Zero Detector/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/232ad532-e223-4bc7-9019-cb297f6e6f82/"/>
-      <tstamps>09eaf8d0-60f0-4f80-bbd4-b79cbf30a3fe</tstamps>
+      <property name="Sheetname" value="Switched Tag 2D Collision Detection"/>
+      <property name="Sheetfile" value="switched-tag-collision-detection.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/Switched Tag 2D Collision Detection/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/"/>
+      <tstamps>f7094021-642e-42be-8197-2b375f207e2f</tstamps>
     </comp>
     <comp ref="R22">
       <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <libsource lib="Device" part="R" description="Resistor"/>
-      <property name="Sheetname" value="Switched Tag Absolute Zero Detector"/>
-      <property name="Sheetfile" value="switched-tag-abs-zero-detector.kicad_sch"/>
-      <sheetpath names="/Switched Tag 2D Collision Detection/Switched Tag Absolute Zero Detector/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/232ad532-e223-4bc7-9019-cb297f6e6f82/"/>
-      <tstamps>c973ec9e-62b6-4ded-9db4-ac0507f0de1d</tstamps>
+      <property name="Sheetname" value="Switched Tag 2D Collision Detection"/>
+      <property name="Sheetfile" value="switched-tag-collision-detection.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/Switched Tag 2D Collision Detection/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/"/>
+      <tstamps>02992ddb-5700-4626-8c7d-81194c892f94</tstamps>
     </comp>
     <comp ref="R23">
-      <value>10k</value>
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <libsource lib="Device" part="R" description="Resistor"/>
-      <property name="Sheetname" value="Switched Tag Absolute Zero Detector"/>
-      <property name="Sheetfile" value="switched-tag-abs-zero-detector.kicad_sch"/>
-      <sheetpath names="/Switched Tag 2D Collision Detection/Switched Tag Absolute Zero Detector/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/232ad532-e223-4bc7-9019-cb297f6e6f82/"/>
-      <tstamps>8e496d4b-6b45-48a8-b37f-a86bcb09852e</tstamps>
+      <property name="Sheetname" value="Switched Tag 2D Collision Detection"/>
+      <property name="Sheetfile" value="switched-tag-collision-detection.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/Switched Tag 2D Collision Detection/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/"/>
+      <tstamps>fc47dd9f-bab6-450e-8335-e9b52142349c</tstamps>
     </comp>
     <comp ref="R24">
-      <value>10k</value>
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <libsource lib="Device" part="R" description="Resistor"/>
-      <property name="Sheetname" value="Switched Tag Absolute Zero Detector"/>
-      <property name="Sheetfile" value="switched-tag-abs-zero-detector.kicad_sch"/>
-      <sheetpath names="/Switched Tag 2D Collision Detection/Switched Tag Absolute Zero Detector/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/232ad532-e223-4bc7-9019-cb297f6e6f82/"/>
-      <tstamps>2e5e371e-e563-4ae9-a766-9fa7184d3bd2</tstamps>
+      <property name="Sheetname" value="Switched Tag 2D Collision Detection"/>
+      <property name="Sheetfile" value="switched-tag-collision-detection.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/Switched Tag 2D Collision Detection/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/"/>
+      <tstamps>6c9272fd-0b02-4cbc-ba0a-3fbb2a600ce0</tstamps>
     </comp>
     <comp ref="R25">
       <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <libsource lib="Device" part="R" description="Resistor"/>
-      <property name="Sheetname" value="Switched Tag Absolute Zero Detector"/>
-      <property name="Sheetfile" value="switched-tag-abs-zero-detector.kicad_sch"/>
-      <sheetpath names="/Switched Tag 2D Collision Detection/Switched Tag Absolute Zero Detector/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/232ad532-e223-4bc7-9019-cb297f6e6f82/"/>
-      <tstamps>b5b4f644-3cc5-470b-8e07-0cfd5a169a9d</tstamps>
+      <property name="Sheetname" value="Switched Tag 2D Collision Detection"/>
+      <property name="Sheetfile" value="switched-tag-collision-detection.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/Switched Tag 2D Collision Detection/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/"/>
+      <tstamps>ca26d683-dece-46d1-ac0f-f6ce7fd9fc41</tstamps>
     </comp>
-    <comp ref="R26">
-      <value>10k</value>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <property name="Sheetname" value="Switched Tag Absolute Zero Detector"/>
-      <property name="Sheetfile" value="switched-tag-abs-zero-detector.kicad_sch"/>
-      <sheetpath names="/Switched Tag 2D Collision Detection/Switched Tag Absolute Zero Detector/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/232ad532-e223-4bc7-9019-cb297f6e6f82/"/>
-      <tstamps>878df301-e984-4af4-9b68-f2adb12fd100</tstamps>
-    </comp>
-    <comp ref="R27">
-      <value>5k</value>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <property name="Sheetname" value="Switched Tag Absolute Zero Detector"/>
-      <property name="Sheetfile" value="switched-tag-abs-zero-detector.kicad_sch"/>
-      <sheetpath names="/Switched Tag 2D Collision Detection/Switched Tag Absolute Zero Detector/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/232ad532-e223-4bc7-9019-cb297f6e6f82/"/>
-      <tstamps>7e2a095a-bc0c-4744-a08c-1730b36fe78c</tstamps>
-    </comp>
-    <comp ref="R28">
-      <value>10k</value>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <property name="Sheetname" value="Switched Tag Absolute Zero Detector"/>
-      <property name="Sheetfile" value="switched-tag-abs-zero-detector.kicad_sch"/>
-      <sheetpath names="/Switched Tag 2D Collision Detection/Switched Tag Absolute Zero Detector/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/232ad532-e223-4bc7-9019-cb297f6e6f82/"/>
-      <tstamps>4f039c77-12ff-499f-b009-a17409bda597</tstamps>
-    </comp>
-    <comp ref="R29">
-      <value>10k</value>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <property name="Sheetname" value="Switched Tag Absolute Zero Detector"/>
-      <property name="Sheetfile" value="switched-tag-abs-zero-detector.kicad_sch"/>
-      <sheetpath names="/Switched Tag 2D Collision Detection/Switched Tag Absolute Zero Detector/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/232ad532-e223-4bc7-9019-cb297f6e6f82/"/>
-      <tstamps>3e7681fa-55de-4e1c-a0b1-5190fcd4ba23</tstamps>
-    </comp>
-    <comp ref="U6">
-      <value>OPAMP</value>
+    <comp ref="U14">
+      <value>TLV9154IDR</value>
+      <footprint>switched-tag-footprint-lib:SOIC_9154IDR_TEX</footprint>
+      <datasheet>TLV9154IDR</datasheet>
       <fields>
-        <field name="Spice_Lib_File">/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/ad8031.mod</field>
-        <field name="Spice_Model">AD8031</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Node_Sequence">1 2 4 5 3</field>
-        <field name="Spice_Primitive">X</field>
+        <field name="Sim.Enable">0</field>
       </fields>
-      <libsource lib="Simulation_SPICE" part="OPAMP" description="Operational amplifier, single, node sequence=1:+ 2:- 3:OUT 4:V+ 5:V-"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Primitive" value="X"/>
-      <property name="Spice_Model" value="AD8031"/>
-      <property name="Spice_Lib_File" value="/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/ad8031.mod"/>
-      <property name="Spice_Node_Sequence" value="1 2 4 5 3"/>
-      <property name="Sheetname" value="Switched Tag Absolute Zero Detector"/>
-      <property name="Sheetfile" value="switched-tag-abs-zero-detector.kicad_sch"/>
-      <sheetpath names="/Switched Tag 2D Collision Detection/Switched Tag Absolute Zero Detector/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/232ad532-e223-4bc7-9019-cb297f6e6f82/"/>
-      <tstamps>67d8c31e-dd1b-4c59-b32a-436ad121620c</tstamps>
+      <libsource lib="switched-tag-symbol-lib" part="TLV9154IDR" description=""/>
+      <property name="Sim.Enable" value="0"/>
+      <property name="Sheetname" value="Switched Tag 2D Collision Detection"/>
+      <property name="Sheetfile" value="switched-tag-collision-detection.kicad_sch"/>
+      <property name="ki_keywords" value="TLV9154IDR"/>
+      <sheetpath names="/Switched Tag 2D Collision Detection/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/"/>
+      <tstamps>8e98b1e2-e8b8-44ce-8c6e-edfd0c903374</tstamps>
     </comp>
-    <comp ref="U7">
-      <value>OPAMP</value>
+    <comp ref="U15">
+      <value>TLV9154IDR</value>
+      <footprint>switched-tag-footprint-lib:SOIC_9154IDR_TEX</footprint>
+      <datasheet>TLV9154IDR</datasheet>
       <fields>
-        <field name="Spice_Lib_File">/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/ad8031.mod</field>
-        <field name="Spice_Model">AD8031</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Node_Sequence">1 2 4 5 3</field>
-        <field name="Spice_Primitive">X</field>
+        <field name="Sim.Enable">0</field>
       </fields>
-      <libsource lib="Simulation_SPICE" part="OPAMP" description="Operational amplifier, single, node sequence=1:+ 2:- 3:OUT 4:V+ 5:V-"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Primitive" value="X"/>
-      <property name="Spice_Model" value="AD8031"/>
-      <property name="Spice_Lib_File" value="/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/ad8031.mod"/>
-      <property name="Spice_Node_Sequence" value="1 2 4 5 3"/>
-      <property name="Sheetname" value="Switched Tag Absolute Zero Detector"/>
-      <property name="Sheetfile" value="switched-tag-abs-zero-detector.kicad_sch"/>
-      <sheetpath names="/Switched Tag 2D Collision Detection/Switched Tag Absolute Zero Detector/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/232ad532-e223-4bc7-9019-cb297f6e6f82/"/>
-      <tstamps>524ccacb-8f9e-4b05-bebd-613a38f89442</tstamps>
+      <libsource lib="switched-tag-symbol-lib" part="TLV9154IDR" description=""/>
+      <property name="Sim.Enable" value="0"/>
+      <property name="Sheetname" value="Switched Tag 2D Collision Detection"/>
+      <property name="Sheetfile" value="switched-tag-collision-detection.kicad_sch"/>
+      <property name="ki_keywords" value="TLV9154IDR"/>
+      <sheetpath names="/Switched Tag 2D Collision Detection/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/"/>
+      <tstamps>e29b5220-cebd-483c-a0c4-24178c12187d</tstamps>
     </comp>
-    <comp ref="U8">
-      <value>OPAMP</value>
-      <fields>
-        <field name="Spice_Lib_File">/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/ad8031.mod</field>
-        <field name="Spice_Model">AD8031</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Node_Sequence">1 2 4 5 3</field>
-        <field name="Spice_Primitive">X</field>
-      </fields>
-      <libsource lib="Simulation_SPICE" part="OPAMP" description="Operational amplifier, single, node sequence=1:+ 2:- 3:OUT 4:V+ 5:V-"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Primitive" value="X"/>
-      <property name="Spice_Model" value="AD8031"/>
-      <property name="Spice_Lib_File" value="/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/ad8031.mod"/>
-      <property name="Spice_Node_Sequence" value="1 2 4 5 3"/>
-      <property name="Sheetname" value="Switched Tag Absolute Zero Detector"/>
-      <property name="Sheetfile" value="switched-tag-abs-zero-detector.kicad_sch"/>
-      <sheetpath names="/Switched Tag 2D Collision Detection/Switched Tag Absolute Zero Detector/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/232ad532-e223-4bc7-9019-cb297f6e6f82/"/>
-      <tstamps>38e0b8cb-6c8b-44e9-a941-12e76de574eb</tstamps>
-    </comp>
-    <comp ref="U9">
-      <value>OPAMP</value>
-      <fields>
-        <field name="Spice_Lib_File">/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/ad8031.mod</field>
-        <field name="Spice_Model">AD8031</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Node_Sequence">1 2 4 5 3</field>
-        <field name="Spice_Primitive">X</field>
-      </fields>
-      <libsource lib="Simulation_SPICE" part="OPAMP" description="Operational amplifier, single, node sequence=1:+ 2:- 3:OUT 4:V+ 5:V-"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Primitive" value="X"/>
-      <property name="Spice_Model" value="AD8031"/>
-      <property name="Spice_Lib_File" value="/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/ad8031.mod"/>
-      <property name="Spice_Node_Sequence" value="1 2 4 5 3"/>
-      <property name="Sheetname" value="Switched Tag Absolute Zero Detector"/>
-      <property name="Sheetfile" value="switched-tag-abs-zero-detector.kicad_sch"/>
-      <sheetpath names="/Switched Tag 2D Collision Detection/Switched Tag Absolute Zero Detector/" tstamps="/9b52db44-d7de-4fdd-bf98-b91b7e70bfef/232ad532-e223-4bc7-9019-cb297f6e6f82/"/>
-      <tstamps>f8d8f17b-cea0-4380-bd37-887cb4040ef8</tstamps>
-    </comp>
-    <comp ref="D5">
-      <value>D1N914</value>
-      <datasheet>1n914</datasheet>
-      <fields>
-        <field name="Spice_Lib_File">../../../../../spice-models/1N914.lib</field>
-        <field name="Spice_Model">D1N914</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Node_Sequence">2 1</field>
-        <field name="Spice_Primitive">D</field>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="Spice_Lib_File" value="../../../../../spice-models/1N914.lib"/>
-      <property name="Spice_Model" value="D1N914"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Primitive" value="D"/>
-      <property name="Spice_Node_Sequence" value="2 1"/>
+    <comp ref="C1">
+      <value>3.3u</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="Sheetname" value="It Player Determination "/>
       <property name="Sheetfile" value="switched-tag-it-player-determination-circuit.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
       <sheetpath names="/It Player Determination /" tstamps="/eda06b69-f42a-4703-ac3e-8e4c13148bd3/"/>
-      <tstamps>6cc7aaca-b17d-4f58-95b7-0a9de7be5958</tstamps>
+      <tstamps>b7ceeec2-72a1-485c-b766-516bdd5c9586</tstamps>
+    </comp>
+    <comp ref="C2">
+      <value>3.3u</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="It Player Determination "/>
+      <property name="Sheetfile" value="switched-tag-it-player-determination-circuit.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/It Player Determination /" tstamps="/eda06b69-f42a-4703-ac3e-8e4c13148bd3/"/>
+      <tstamps>7df2cca2-970b-43a8-aa16-c84eacbb88b9</tstamps>
+    </comp>
+    <comp ref="C3">
+      <value>1u</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="It Player Determination "/>
+      <property name="Sheetfile" value="switched-tag-it-player-determination-circuit.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/It Player Determination /" tstamps="/eda06b69-f42a-4703-ac3e-8e4c13148bd3/"/>
+      <tstamps>4964cead-7415-4e62-bc9f-df1dd8426f5a</tstamps>
+    </comp>
+    <comp ref="C4">
+      <value>1u</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="It Player Determination "/>
+      <property name="Sheetfile" value="switched-tag-it-player-determination-circuit.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/It Player Determination /" tstamps="/eda06b69-f42a-4703-ac3e-8e4c13148bd3/"/>
+      <tstamps>020dce45-5843-42f3-bc43-1e357a22a55b</tstamps>
     </comp>
     <comp ref="D6">
       <value>D1N914</value>
+      <footprint>Diode_SMD:D_0603_1608Metric</footprint>
       <datasheet>1n914</datasheet>
       <fields>
-        <field name="Spice_Lib_File">../../../../../spice-models/1N914.lib</field>
-        <field name="Spice_Model">D1N914</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Node_Sequence">2 1</field>
-        <field name="Spice_Primitive">D</field>
+        <field name="Sim.Library">${SPICE_MODEL_DIR_REL}/1N914.lib</field>
+        <field name="Sim.Name">D1N914</field>
+        <field name="Sim.Pins">2=1 1=2</field>
       </fields>
       <libsource lib="Device" part="D" description="Diode"/>
-      <property name="Spice_Lib_File" value="../../../../../spice-models/1N914.lib"/>
-      <property name="Spice_Model" value="D1N914"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Primitive" value="D"/>
-      <property name="Spice_Node_Sequence" value="2 1"/>
+      <property name="Sim.Library" value="${SPICE_MODEL_DIR_REL}/1N914.lib"/>
+      <property name="Sim.Name" value="D1N914"/>
+      <property name="Sim.Pins" value="2=1 1=2"/>
       <property name="Sheetname" value="It Player Determination "/>
       <property name="Sheetfile" value="switched-tag-it-player-determination-circuit.kicad_sch"/>
+      <property name="ki_description" value="Diode"/>
+      <property name="ki_keywords" value="diode"/>
       <sheetpath names="/It Player Determination /" tstamps="/eda06b69-f42a-4703-ac3e-8e4c13148bd3/"/>
-      <tstamps>ca98c69f-24e5-4491-939c-7a1ab0e907f2</tstamps>
+      <tstamps>6cc7aaca-b17d-4f58-95b7-0a9de7be5958</tstamps>
     </comp>
     <comp ref="D7">
       <value>D1N914</value>
+      <footprint>Diode_SMD:D_0603_1608Metric</footprint>
       <datasheet>1n914</datasheet>
       <fields>
-        <field name="Spice_Lib_File">../../../../../spice-models/1N914.lib</field>
-        <field name="Spice_Model">D1N914</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Node_Sequence">2 1</field>
-        <field name="Spice_Primitive">D</field>
+        <field name="Sim.Library">${SPICE_MODEL_DIR_REL}/1N914.lib</field>
+        <field name="Sim.Name">D1N914</field>
+        <field name="Sim.Pins">2=1 1=2</field>
       </fields>
       <libsource lib="Device" part="D" description="Diode"/>
-      <property name="Spice_Lib_File" value="../../../../../spice-models/1N914.lib"/>
-      <property name="Spice_Model" value="D1N914"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Primitive" value="D"/>
-      <property name="Spice_Node_Sequence" value="2 1"/>
+      <property name="Sim.Library" value="${SPICE_MODEL_DIR_REL}/1N914.lib"/>
+      <property name="Sim.Name" value="D1N914"/>
+      <property name="Sim.Pins" value="2=1 1=2"/>
       <property name="Sheetname" value="It Player Determination "/>
       <property name="Sheetfile" value="switched-tag-it-player-determination-circuit.kicad_sch"/>
+      <property name="ki_description" value="Diode"/>
+      <property name="ki_keywords" value="diode"/>
       <sheetpath names="/It Player Determination /" tstamps="/eda06b69-f42a-4703-ac3e-8e4c13148bd3/"/>
-      <tstamps>52549e07-3221-41e9-98e6-7a308f6ca777</tstamps>
+      <tstamps>ca98c69f-24e5-4491-939c-7a1ab0e907f2</tstamps>
     </comp>
-    <comp ref="D8">
-      <value>D1N914</value>
-      <datasheet>1n914</datasheet>
-      <fields>
-        <field name="Spice_Lib_File">../../../../../spice-models/1N914.lib</field>
-        <field name="Spice_Model">D1N914</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Node_Sequence">2 1</field>
-        <field name="Spice_Primitive">D</field>
-      </fields>
-      <libsource lib="Device" part="D" description="Diode"/>
-      <property name="Spice_Lib_File" value="../../../../../spice-models/1N914.lib"/>
-      <property name="Spice_Model" value="D1N914"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Primitive" value="D"/>
-      <property name="Spice_Node_Sequence" value="2 1"/>
+    <comp ref="R26">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="It Player Determination "/>
       <property name="Sheetfile" value="switched-tag-it-player-determination-circuit.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/It Player Determination /" tstamps="/eda06b69-f42a-4703-ac3e-8e4c13148bd3/"/>
-      <tstamps>3cc737e7-a280-495d-9aca-f1a78f176d57</tstamps>
+      <tstamps>df36cf73-d90a-4f91-8b3a-fcea327fbce4</tstamps>
+    </comp>
+    <comp ref="R27">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="It Player Determination "/>
+      <property name="Sheetfile" value="switched-tag-it-player-determination-circuit.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/It Player Determination /" tstamps="/eda06b69-f42a-4703-ac3e-8e4c13148bd3/"/>
+      <tstamps>1e47c0f0-350b-4f0d-8db9-5a3abe5bda01</tstamps>
+    </comp>
+    <comp ref="R28">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="It Player Determination "/>
+      <property name="Sheetfile" value="switched-tag-it-player-determination-circuit.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/It Player Determination /" tstamps="/eda06b69-f42a-4703-ac3e-8e4c13148bd3/"/>
+      <tstamps>2446d0fd-3e02-4a25-a9a5-a44d42ec166c</tstamps>
+    </comp>
+    <comp ref="R29">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="It Player Determination "/>
+      <property name="Sheetfile" value="switched-tag-it-player-determination-circuit.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/It Player Determination /" tstamps="/eda06b69-f42a-4703-ac3e-8e4c13148bd3/"/>
+      <tstamps>1bbe907d-dff8-4fca-bf00-3491b5b0c319</tstamps>
     </comp>
     <comp ref="R30">
       <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="It Player Determination "/>
       <property name="Sheetfile" value="switched-tag-it-player-determination-circuit.kicad_sch"/>
-      <sheetpath names="/It Player Determination /" tstamps="/eda06b69-f42a-4703-ac3e-8e4c13148bd3/"/>
-      <tstamps>b215bbf0-5de4-4246-a1b4-b6dbd5543402</tstamps>
-    </comp>
-    <comp ref="R31">
-      <value>10k</value>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <property name="Sheetname" value="It Player Determination "/>
-      <property name="Sheetfile" value="switched-tag-it-player-determination-circuit.kicad_sch"/>
-      <sheetpath names="/It Player Determination /" tstamps="/eda06b69-f42a-4703-ac3e-8e4c13148bd3/"/>
-      <tstamps>6b406796-2536-4f97-b26e-5ab11d86aa4b</tstamps>
-    </comp>
-    <comp ref="R32">
-      <value>10k</value>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <property name="Sheetname" value="It Player Determination "/>
-      <property name="Sheetfile" value="switched-tag-it-player-determination-circuit.kicad_sch"/>
-      <sheetpath names="/It Player Determination /" tstamps="/eda06b69-f42a-4703-ac3e-8e4c13148bd3/"/>
-      <tstamps>8f6f1379-76c9-4e9f-afe0-e34f9cc386c5</tstamps>
-    </comp>
-    <comp ref="R33">
-      <value>10k</value>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <property name="Sheetname" value="It Player Determination "/>
-      <property name="Sheetfile" value="switched-tag-it-player-determination-circuit.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/It Player Determination /" tstamps="/eda06b69-f42a-4703-ac3e-8e4c13148bd3/"/>
       <tstamps>33eb573c-808d-4761-a1d9-2d758d748230</tstamps>
     </comp>
-    <comp ref="R34">
+    <comp ref="R31">
       <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="It Player Determination "/>
       <property name="Sheetfile" value="switched-tag-it-player-determination-circuit.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/It Player Determination /" tstamps="/eda06b69-f42a-4703-ac3e-8e4c13148bd3/"/>
       <tstamps>c0db3531-3df2-472a-9450-fd0f1d19c976</tstamps>
     </comp>
-    <comp ref="R35">
+    <comp ref="R32">
       <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="It Player Determination "/>
       <property name="Sheetfile" value="switched-tag-it-player-determination-circuit.kicad_sch"/>
-      <sheetpath names="/It Player Determination /" tstamps="/eda06b69-f42a-4703-ac3e-8e4c13148bd3/"/>
-      <tstamps>c248b417-ee1f-423a-b562-0ce8816af1a2</tstamps>
-    </comp>
-    <comp ref="R36">
-      <value>10k</value>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <property name="Sheetname" value="It Player Determination "/>
-      <property name="Sheetfile" value="switched-tag-it-player-determination-circuit.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/It Player Determination /" tstamps="/eda06b69-f42a-4703-ac3e-8e4c13148bd3/"/>
       <tstamps>fb5a3375-0677-47c7-b364-83d4d20fc9c4</tstamps>
     </comp>
-    <comp ref="R37">
+    <comp ref="R33">
       <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="It Player Determination "/>
       <property name="Sheetfile" value="switched-tag-it-player-determination-circuit.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/It Player Determination /" tstamps="/eda06b69-f42a-4703-ac3e-8e4c13148bd3/"/>
       <tstamps>b8760fff-a1dd-4d2d-b162-b48d06afdf30</tstamps>
     </comp>
-    <comp ref="R38">
+    <comp ref="R34">
       <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="It Player Determination "/>
       <property name="Sheetfile" value="switched-tag-it-player-determination-circuit.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/It Player Determination /" tstamps="/eda06b69-f42a-4703-ac3e-8e4c13148bd3/"/>
-      <tstamps>ebfae705-98bc-48e8-949b-e23067f99f06</tstamps>
+      <tstamps>0b51df63-90c3-48fa-a6cc-1878682cca24</tstamps>
     </comp>
-    <comp ref="U10">
-      <value>OPAMP</value>
-      <fields>
-        <field name="Spice_Lib_File">/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/ad8031.mod</field>
-        <field name="Spice_Model">AD8031</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Node_Sequence">1 2 4 5 3</field>
-        <field name="Spice_Primitive">X</field>
-      </fields>
-      <libsource lib="Simulation_SPICE" part="OPAMP" description="Operational amplifier, single, node sequence=1:+ 2:- 3:OUT 4:V+ 5:V-"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Primitive" value="X"/>
-      <property name="Spice_Model" value="AD8031"/>
-      <property name="Spice_Lib_File" value="/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/ad8031.mod"/>
-      <property name="Spice_Node_Sequence" value="1 2 4 5 3"/>
+    <comp ref="R35">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="It Player Determination "/>
       <property name="Sheetfile" value="switched-tag-it-player-determination-circuit.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/It Player Determination /" tstamps="/eda06b69-f42a-4703-ac3e-8e4c13148bd3/"/>
-      <tstamps>06afcccb-fa95-4cc6-8799-b75b85e6a5ac</tstamps>
+      <tstamps>47009c38-87aa-4fe8-b764-b06d8efb1bad</tstamps>
     </comp>
-    <comp ref="U11">
-      <value>OPAMP</value>
-      <fields>
-        <field name="Spice_Lib_File">/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/ad8031.mod</field>
-        <field name="Spice_Model">AD8031</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Node_Sequence">1 2 4 5 3</field>
-        <field name="Spice_Primitive">X</field>
-      </fields>
-      <libsource lib="Simulation_SPICE" part="OPAMP" description="Operational amplifier, single, node sequence=1:+ 2:- 3:OUT 4:V+ 5:V-"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Primitive" value="X"/>
-      <property name="Spice_Model" value="AD8031"/>
-      <property name="Spice_Lib_File" value="/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/ad8031.mod"/>
-      <property name="Spice_Node_Sequence" value="1 2 4 5 3"/>
+    <comp ref="R36">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="It Player Determination "/>
       <property name="Sheetfile" value="switched-tag-it-player-determination-circuit.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/It Player Determination /" tstamps="/eda06b69-f42a-4703-ac3e-8e4c13148bd3/"/>
-      <tstamps>97ef0709-7e8a-4241-a1d2-d5a8a8c43b71</tstamps>
+      <tstamps>feea570c-c712-4d9d-8980-623ff02d37a2</tstamps>
     </comp>
-    <comp ref="U12">
-      <value>OPAMP</value>
+    <comp ref="U13">
+      <value>TLV9154IDR</value>
+      <footprint>switched-tag-footprint-lib:SOIC_9154IDR_TEX</footprint>
+      <datasheet>TLV9154IDR</datasheet>
       <fields>
-        <field name="Spice_Lib_File">/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/ad8031.mod</field>
-        <field name="Spice_Model">AD8031</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Node_Sequence">1 2 4 5 3</field>
-        <field name="Spice_Primitive">X</field>
+        <field name="Sim.Enable">0</field>
       </fields>
-      <libsource lib="Simulation_SPICE" part="OPAMP" description="Operational amplifier, single, node sequence=1:+ 2:- 3:OUT 4:V+ 5:V-"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Primitive" value="X"/>
-      <property name="Spice_Model" value="AD8031"/>
-      <property name="Spice_Lib_File" value="/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/ad8031.mod"/>
-      <property name="Spice_Node_Sequence" value="1 2 4 5 3"/>
+      <libsource lib="switched-tag-symbol-lib" part="TLV9154IDR" description=""/>
+      <property name="Sim.Enable" value="0"/>
       <property name="Sheetname" value="It Player Determination "/>
       <property name="Sheetfile" value="switched-tag-it-player-determination-circuit.kicad_sch"/>
+      <property name="ki_keywords" value="TLV9154IDR"/>
       <sheetpath names="/It Player Determination /" tstamps="/eda06b69-f42a-4703-ac3e-8e4c13148bd3/"/>
-      <tstamps>680746b5-42ae-4449-ba4e-1f3ac24850e3</tstamps>
-    </comp>
-    <comp ref="C3">
-      <value>0.1u</value>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <property name="Sheetname" value="Sample-and-hold-player-one-it-value"/>
-      <property name="Sheetfile" value="switched-tag-sample-and-hold.kicad_sch"/>
-      <sheetpath names="/It Player Determination /Sample-and-hold-player-one-it-value/" tstamps="/eda06b69-f42a-4703-ac3e-8e4c13148bd3/d1e92cde-8e29-44d0-a637-7e3ce0c46456/"/>
-      <tstamps>d50df25f-5dbb-4cdb-b119-7a9a0ebb2c00</tstamps>
+      <tstamps>da05a199-6fd8-456f-8f15-151edc3b8414</tstamps>
     </comp>
     <comp ref="Q1">
       <value>RUL035N02</value>
+      <footprint>Package_TO_SOT_SMD:SOT-89-5</footprint>
       <fields>
-        <field name="Spice_Lib_File">../../../../../spice-models/rul035n02.lib</field>
-        <field name="Spice_Model">RUL035N02</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Primitive">X</field>
+        <field name="Sim.Library">${SPICE_MODEL_DIR_REL}/rul035n02.lib</field>
+        <field name="Sim.Name">RUL035N02</field>
+        <field name="Sim.Pins">1=1 2=2 3=3</field>
       </fields>
       <libsource lib="Device" part="Q_NMOS_DGS" description="N-MOSFET transistor, drain/gate/source"/>
-      <property name="Spice_Primitive" value="X"/>
-      <property name="Spice_Model" value="RUL035N02"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Lib_File" value="../../../../../spice-models/rul035n02.lib"/>
-      <property name="Sheetname" value="Sample-and-hold-player-one-it-value"/>
-      <property name="Sheetfile" value="switched-tag-sample-and-hold.kicad_sch"/>
-      <sheetpath names="/It Player Determination /Sample-and-hold-player-one-it-value/" tstamps="/eda06b69-f42a-4703-ac3e-8e4c13148bd3/d1e92cde-8e29-44d0-a637-7e3ce0c46456/"/>
-      <tstamps>97c5d359-f989-43db-bba2-6207394284d9</tstamps>
-    </comp>
-    <comp ref="U13">
-      <value>OPAMP</value>
-      <fields>
-        <field name="Spice_Lib_File">/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/ad8031.mod</field>
-        <field name="Spice_Model">AD8031</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Node_Sequence">1 2 4 5 3</field>
-        <field name="Spice_Primitive">X</field>
-      </fields>
-      <libsource lib="Simulation_SPICE" part="OPAMP" description="Operational amplifier, single, node sequence=1:+ 2:- 3:OUT 4:V+ 5:V-"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Primitive" value="X"/>
-      <property name="Spice_Model" value="AD8031"/>
-      <property name="Spice_Lib_File" value="/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/ad8031.mod"/>
-      <property name="Spice_Node_Sequence" value="1 2 4 5 3"/>
-      <property name="Sheetname" value="Sample-and-hold-player-one-it-value"/>
-      <property name="Sheetfile" value="switched-tag-sample-and-hold.kicad_sch"/>
-      <sheetpath names="/It Player Determination /Sample-and-hold-player-one-it-value/" tstamps="/eda06b69-f42a-4703-ac3e-8e4c13148bd3/d1e92cde-8e29-44d0-a637-7e3ce0c46456/"/>
-      <tstamps>8a8efc87-d959-4488-b0d4-f534dd6d2134</tstamps>
-    </comp>
-    <comp ref="U14">
-      <value>OPAMP</value>
-      <fields>
-        <field name="Spice_Lib_File">/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/ad8031.mod</field>
-        <field name="Spice_Model">AD8031</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Node_Sequence">1 2 4 5 3</field>
-        <field name="Spice_Primitive">X</field>
-      </fields>
-      <libsource lib="Simulation_SPICE" part="OPAMP" description="Operational amplifier, single, node sequence=1:+ 2:- 3:OUT 4:V+ 5:V-"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Primitive" value="X"/>
-      <property name="Spice_Model" value="AD8031"/>
-      <property name="Spice_Lib_File" value="/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/ad8031.mod"/>
-      <property name="Spice_Node_Sequence" value="1 2 4 5 3"/>
-      <property name="Sheetname" value="Sample-and-hold-player-one-it-value"/>
-      <property name="Sheetfile" value="switched-tag-sample-and-hold.kicad_sch"/>
-      <sheetpath names="/It Player Determination /Sample-and-hold-player-one-it-value/" tstamps="/eda06b69-f42a-4703-ac3e-8e4c13148bd3/d1e92cde-8e29-44d0-a637-7e3ce0c46456/"/>
-      <tstamps>5c19420f-0fe8-4ab6-86dc-6a8ea001d44e</tstamps>
-    </comp>
-    <comp ref="C4">
-      <value>0.1u</value>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <property name="Sheetname" value="Sample-and-hold-player-two-it-value"/>
-      <property name="Sheetfile" value="switched-tag-sample-and-hold.kicad_sch"/>
-      <sheetpath names="/It Player Determination /Sample-and-hold-player-two-it-value/" tstamps="/eda06b69-f42a-4703-ac3e-8e4c13148bd3/32d970ae-9ef7-45ca-9966-ff1696c329b6/"/>
-      <tstamps>d50df25f-5dbb-4cdb-b119-7a9a0ebb2c00</tstamps>
-    </comp>
-    <comp ref="Q2">
-      <value>RUL035N02</value>
-      <fields>
-        <field name="Spice_Lib_File">../../../../../spice-models/rul035n02.lib</field>
-        <field name="Spice_Model">RUL035N02</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Primitive">X</field>
-      </fields>
-      <libsource lib="Device" part="Q_NMOS_DGS" description="N-MOSFET transistor, drain/gate/source"/>
-      <property name="Spice_Primitive" value="X"/>
-      <property name="Spice_Model" value="RUL035N02"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Lib_File" value="../../../../../spice-models/rul035n02.lib"/>
-      <property name="Sheetname" value="Sample-and-hold-player-two-it-value"/>
-      <property name="Sheetfile" value="switched-tag-sample-and-hold.kicad_sch"/>
-      <sheetpath names="/It Player Determination /Sample-and-hold-player-two-it-value/" tstamps="/eda06b69-f42a-4703-ac3e-8e4c13148bd3/32d970ae-9ef7-45ca-9966-ff1696c329b6/"/>
-      <tstamps>97c5d359-f989-43db-bba2-6207394284d9</tstamps>
-    </comp>
-    <comp ref="U15">
-      <value>OPAMP</value>
-      <fields>
-        <field name="Spice_Lib_File">/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/ad8031.mod</field>
-        <field name="Spice_Model">AD8031</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Node_Sequence">1 2 4 5 3</field>
-        <field name="Spice_Primitive">X</field>
-      </fields>
-      <libsource lib="Simulation_SPICE" part="OPAMP" description="Operational amplifier, single, node sequence=1:+ 2:- 3:OUT 4:V+ 5:V-"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Primitive" value="X"/>
-      <property name="Spice_Model" value="AD8031"/>
-      <property name="Spice_Lib_File" value="/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/ad8031.mod"/>
-      <property name="Spice_Node_Sequence" value="1 2 4 5 3"/>
-      <property name="Sheetname" value="Sample-and-hold-player-two-it-value"/>
-      <property name="Sheetfile" value="switched-tag-sample-and-hold.kicad_sch"/>
-      <sheetpath names="/It Player Determination /Sample-and-hold-player-two-it-value/" tstamps="/eda06b69-f42a-4703-ac3e-8e4c13148bd3/32d970ae-9ef7-45ca-9966-ff1696c329b6/"/>
-      <tstamps>8a8efc87-d959-4488-b0d4-f534dd6d2134</tstamps>
-    </comp>
-    <comp ref="U16">
-      <value>OPAMP</value>
-      <fields>
-        <field name="Spice_Lib_File">/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/ad8031.mod</field>
-        <field name="Spice_Model">AD8031</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Node_Sequence">1 2 4 5 3</field>
-        <field name="Spice_Primitive">X</field>
-      </fields>
-      <libsource lib="Simulation_SPICE" part="OPAMP" description="Operational amplifier, single, node sequence=1:+ 2:- 3:OUT 4:V+ 5:V-"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Primitive" value="X"/>
-      <property name="Spice_Model" value="AD8031"/>
-      <property name="Spice_Lib_File" value="/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/ad8031.mod"/>
-      <property name="Spice_Node_Sequence" value="1 2 4 5 3"/>
-      <property name="Sheetname" value="Sample-and-hold-player-two-it-value"/>
-      <property name="Sheetfile" value="switched-tag-sample-and-hold.kicad_sch"/>
-      <sheetpath names="/It Player Determination /Sample-and-hold-player-two-it-value/" tstamps="/eda06b69-f42a-4703-ac3e-8e4c13148bd3/32d970ae-9ef7-45ca-9966-ff1696c329b6/"/>
-      <tstamps>5c19420f-0fe8-4ab6-86dc-6a8ea001d44e</tstamps>
-    </comp>
-    <comp ref="C5">
-      <value>2u</value>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <property name="Sheetname" value="Switched Tag Pendelum Model"/>
-      <property name="Sheetfile" value="switched-tag-pendelum-model.kicad_sch"/>
-      <sheetpath names="/Switched Tag Pendelum Model/" tstamps="/68fe8760-7121-4ab9-a6d3-f164d1645af8/"/>
-      <tstamps>a6594324-f32b-4068-a98a-d476e736b552</tstamps>
-    </comp>
-    <comp ref="R39">
-      <value>100k</value>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <property name="Sheetname" value="Switched Tag Pendelum Model"/>
-      <property name="Sheetfile" value="switched-tag-pendelum-model.kicad_sch"/>
-      <sheetpath names="/Switched Tag Pendelum Model/" tstamps="/68fe8760-7121-4ab9-a6d3-f164d1645af8/"/>
-      <tstamps>2dbac5f7-bcc6-42b7-9310-df8b0dfb3c31</tstamps>
-    </comp>
-    <comp ref="R40">
-      <value>10k</value>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <property name="Sheetname" value="Switched Tag Pendelum Model"/>
-      <property name="Sheetfile" value="switched-tag-pendelum-model.kicad_sch"/>
-      <sheetpath names="/Switched Tag Pendelum Model/" tstamps="/68fe8760-7121-4ab9-a6d3-f164d1645af8/"/>
-      <tstamps>3eaaad3d-ce8e-4787-b3a0-1d26a967c010</tstamps>
-    </comp>
-    <comp ref="R41">
-      <value>10k</value>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <property name="Sheetname" value="Switched Tag Pendelum Model"/>
-      <property name="Sheetfile" value="switched-tag-pendelum-model.kicad_sch"/>
-      <sheetpath names="/Switched Tag Pendelum Model/" tstamps="/68fe8760-7121-4ab9-a6d3-f164d1645af8/"/>
-      <tstamps>b53aed59-16d3-4977-9c32-eed9e9f2fdec</tstamps>
-    </comp>
-    <comp ref="U17">
-      <value>OPAMP</value>
-      <fields>
-        <field name="Spice_Lib_File">/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/ad8031.mod</field>
-        <field name="Spice_Model">AD8031</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Node_Sequence">1 2 4 5 3</field>
-        <field name="Spice_Primitive">X</field>
-      </fields>
-      <libsource lib="Simulation_SPICE" part="OPAMP" description="Operational amplifier, single, node sequence=1:+ 2:- 3:OUT 4:V+ 5:V-"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Primitive" value="X"/>
-      <property name="Spice_Model" value="AD8031"/>
-      <property name="Spice_Lib_File" value="/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/ad8031.mod"/>
-      <property name="Spice_Node_Sequence" value="1 2 4 5 3"/>
-      <property name="Sheetname" value="Switched Tag Pendelum Model"/>
-      <property name="Sheetfile" value="switched-tag-pendelum-model.kicad_sch"/>
-      <sheetpath names="/Switched Tag Pendelum Model/" tstamps="/68fe8760-7121-4ab9-a6d3-f164d1645af8/"/>
-      <tstamps>84577768-cf00-42f6-943c-c519b757a9d2</tstamps>
-    </comp>
-    <comp ref="U18">
-      <value>OPAMP</value>
-      <fields>
-        <field name="Spice_Lib_File">/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/ad8031.mod</field>
-        <field name="Spice_Model">AD8031</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Node_Sequence">1 2 4 5 3</field>
-        <field name="Spice_Primitive">X</field>
-      </fields>
-      <libsource lib="Simulation_SPICE" part="OPAMP" description="Operational amplifier, single, node sequence=1:+ 2:- 3:OUT 4:V+ 5:V-"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Primitive" value="X"/>
-      <property name="Spice_Model" value="AD8031"/>
-      <property name="Spice_Lib_File" value="/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/ad8031.mod"/>
-      <property name="Spice_Node_Sequence" value="1 2 4 5 3"/>
-      <property name="Sheetname" value="Switched Tag Pendelum Model"/>
-      <property name="Sheetfile" value="switched-tag-pendelum-model.kicad_sch"/>
-      <sheetpath names="/Switched Tag Pendelum Model/" tstamps="/68fe8760-7121-4ab9-a6d3-f164d1645af8/"/>
-      <tstamps>c4e09db5-bcb1-49c8-915c-82045da1bd21</tstamps>
-    </comp>
-    <comp ref="U19">
-      <value>OPAMP</value>
-      <fields>
-        <field name="Spice_Lib_File">/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/ad8031.mod</field>
-        <field name="Spice_Model">AD8031</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Node_Sequence">1 2 4 5 3</field>
-        <field name="Spice_Primitive">X</field>
-      </fields>
-      <libsource lib="Simulation_SPICE" part="OPAMP" description="Operational amplifier, single, node sequence=1:+ 2:- 3:OUT 4:V+ 5:V-"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Primitive" value="X"/>
-      <property name="Spice_Model" value="AD8031"/>
-      <property name="Spice_Lib_File" value="/home/pab/Inventions/analog-circuit-game-console/ms-circuit-video-games/spice-models/ad8031.mod"/>
-      <property name="Spice_Node_Sequence" value="1 2 4 5 3"/>
-      <property name="Sheetname" value="Switched Tag Pendelum Model"/>
-      <property name="Sheetfile" value="switched-tag-pendelum-model.kicad_sch"/>
-      <sheetpath names="/Switched Tag Pendelum Model/" tstamps="/68fe8760-7121-4ab9-a6d3-f164d1645af8/"/>
-      <tstamps>04b9e3ea-4abc-4399-84a5-839dbe4aeb0b</tstamps>
-    </comp>
-    <comp ref="Q3">
-      <value>RUL035N02</value>
-      <fields>
-        <field name="Spice_Lib_File">../../../../../spice-models/rul035n02.lib</field>
-        <field name="Spice_Model">RUL035N02</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Primitive">X</field>
-      </fields>
-      <libsource lib="Device" part="Q_NMOS_DGS" description="N-MOSFET transistor, drain/gate/source"/>
-      <property name="Spice_Primitive" value="X"/>
-      <property name="Spice_Model" value="RUL035N02"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Lib_File" value="../../../../../spice-models/rul035n02.lib"/>
+      <property name="Sim.Library" value="${SPICE_MODEL_DIR_REL}/rul035n02.lib"/>
+      <property name="Sim.Name" value="RUL035N02"/>
+      <property name="Sim.Pins" value="1=1 2=2 3=3"/>
       <property name="Sheetname" value="Winner Determination Circuit"/>
       <property name="Sheetfile" value="switched-tag-winner-determination.kicad_sch"/>
+      <property name="ki_description" value="N-MOSFET transistor, drain/gate/source"/>
+      <property name="ki_keywords" value="transistor NMOS N-MOS N-MOSFET"/>
       <sheetpath names="/Winner Determination Circuit/" tstamps="/5063b61c-13ff-4ac2-b013-ec01ef23a5a4/"/>
       <tstamps>8feb8e28-1d75-41d2-90b6-e0ca9c4c0e03</tstamps>
     </comp>
-    <comp ref="Q4">
+    <comp ref="Q2">
       <value>RUL035N02</value>
+      <footprint>Package_TO_SOT_SMD:SOT-89-5</footprint>
       <fields>
-        <field name="Spice_Lib_File">../../../../../spice-models/rul035n02.lib</field>
-        <field name="Spice_Model">RUL035N02</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Primitive">X</field>
+        <field name="Sim.Library">${SPICE_MODEL_DIR_REL}/rul035n02.lib</field>
+        <field name="Sim.Name">RUL035N02</field>
+        <field name="Sim.Pins">1=1 2=2 3=3</field>
       </fields>
       <libsource lib="Device" part="Q_NMOS_DGS" description="N-MOSFET transistor, drain/gate/source"/>
-      <property name="Spice_Primitive" value="X"/>
-      <property name="Spice_Model" value="RUL035N02"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Lib_File" value="../../../../../spice-models/rul035n02.lib"/>
+      <property name="Sim.Library" value="${SPICE_MODEL_DIR_REL}/rul035n02.lib"/>
+      <property name="Sim.Name" value="RUL035N02"/>
+      <property name="Sim.Pins" value="1=1 2=2 3=3"/>
       <property name="Sheetname" value="Winner Determination Circuit"/>
       <property name="Sheetfile" value="switched-tag-winner-determination.kicad_sch"/>
+      <property name="ki_description" value="N-MOSFET transistor, drain/gate/source"/>
+      <property name="ki_keywords" value="transistor NMOS N-MOS N-MOSFET"/>
       <sheetpath names="/Winner Determination Circuit/" tstamps="/5063b61c-13ff-4ac2-b013-ec01ef23a5a4/"/>
       <tstamps>d27ad6b3-dcf2-4831-914e-1979a6c40936</tstamps>
     </comp>
-    <comp ref="Q5">
-      <value>RUL035N02</value>
-      <fields>
-        <field name="Spice_Lib_File">../../../../../spice-models/rul035n02.lib</field>
-        <field name="Spice_Model">RUL035N02</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Primitive">X</field>
-      </fields>
-      <libsource lib="Device" part="Q_NMOS_DGS" description="N-MOSFET transistor, drain/gate/source"/>
-      <property name="Spice_Primitive" value="X"/>
-      <property name="Spice_Model" value="RUL035N02"/>
-      <property name="Spice_Netlist_Enabled" value="Y"/>
-      <property name="Spice_Lib_File" value="../../../../../spice-models/rul035n02.lib"/>
-      <property name="Sheetname" value="Winner Determination Circuit"/>
-      <property name="Sheetfile" value="switched-tag-winner-determination.kicad_sch"/>
-      <sheetpath names="/Winner Determination Circuit/" tstamps="/5063b61c-13ff-4ac2-b013-ec01ef23a5a4/"/>
-      <tstamps>c73493d2-a928-4158-90d2-da597183e443</tstamps>
-    </comp>
-    <comp ref="R42">
+    <comp ref="R37">
       <value>1k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="Winner Determination Circuit"/>
       <property name="Sheetfile" value="switched-tag-winner-determination.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/Winner Determination Circuit/" tstamps="/5063b61c-13ff-4ac2-b013-ec01ef23a5a4/"/>
       <tstamps>1381db93-ab64-4ffb-a00e-f9fd6e0ceb8f</tstamps>
     </comp>
-    <comp ref="R43">
+    <comp ref="R38">
       <value>1k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="Winner Determination Circuit"/>
       <property name="Sheetfile" value="switched-tag-winner-determination.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/Winner Determination Circuit/" tstamps="/5063b61c-13ff-4ac2-b013-ec01ef23a5a4/"/>
       <tstamps>4127acd4-9a6d-4f5e-9647-57e2ce7a0cd9</tstamps>
-    </comp>
-    <comp ref="R44">
-      <value>1k</value>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <property name="Sheetname" value="Winner Determination Circuit"/>
-      <property name="Sheetfile" value="switched-tag-winner-determination.kicad_sch"/>
-      <sheetpath names="/Winner Determination Circuit/" tstamps="/5063b61c-13ff-4ac2-b013-ec01ef23a5a4/"/>
-      <tstamps>a123d09b-54bb-46d3-bdfa-520011adcb0e</tstamps>
     </comp>
   </components>
   <libparts>
@@ -1398,11 +1003,11 @@
       <docs>~</docs>
       <fields>
         <field name="Reference">V</field>
-        <field name="Value">VDC</field>
+        <field name="Value">1</field>
         <field name="Datasheet">~</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Primitive">V</field>
-        <field name="Spice_Model">dc(1)</field>
+        <field name="Sim.Pins">1=+ 2=-</field>
+        <field name="Sim.Type">DC</field>
+        <field name="Sim.Device">V</field>
       </fields>
       <pins>
         <pin num="1" name="" type="passive"/>
@@ -1416,9 +1021,10 @@
         <field name="Reference">V</field>
         <field name="Value">VPULSE</field>
         <field name="Datasheet">~</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Primitive">V</field>
-        <field name="Spice_Model">pulse(0 1 2n 2n 2n 50n 100n)</field>
+        <field name="Sim.Pins">1=+ 2=-</field>
+        <field name="Sim.Type">PULSE</field>
+        <field name="Sim.Device">V</field>
+        <field name="Sim.Params">y1=0 y2=1 td=2n tr=2n tf=2n tw=50n per=100n</field>
       </fields>
       <pins>
         <pin num="1" name="" type="passive"/>
@@ -1432,13 +1038,44 @@
         <field name="Reference">V</field>
         <field name="Value">VSIN</field>
         <field name="Datasheet">~</field>
-        <field name="Spice_Netlist_Enabled">Y</field>
-        <field name="Spice_Primitive">V</field>
-        <field name="Spice_Model">sin(0 1 1k)</field>
+        <field name="Sim.Pins">1=+ 2=-</field>
+        <field name="Sim.Params">dc=0 ampl=1 f=1k ac=1</field>
+        <field name="Sim.Type">SIN</field>
+        <field name="Sim.Device">V</field>
       </fields>
       <pins>
         <pin num="1" name="" type="passive"/>
         <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="switched-tag-symbol-lib" part="TLV9154IDR">
+      <docs>TLV9154IDR</docs>
+      <footprints>
+        <fp>SOIC_9154IDR_TEX</fp>
+        <fp>SOIC_9154IDR_TEX-M</fp>
+        <fp>SOIC_9154IDR_TEX-L</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TLV9154IDR</field>
+        <field name="Footprint">SOIC_9154IDR_TEX</field>
+        <field name="Datasheet">TLV9154IDR</field>
+      </fields>
+      <pins>
+        <pin num="1" name="OUT1" type="output"/>
+        <pin num="2" name="IN1-" type="input"/>
+        <pin num="3" name="IN1+" type="input"/>
+        <pin num="4" name="V+" type="power_in"/>
+        <pin num="5" name="IN2+" type="input"/>
+        <pin num="6" name="IN2-" type="input"/>
+        <pin num="7" name="OUT2" type="output"/>
+        <pin num="8" name="OUT3" type="output"/>
+        <pin num="9" name="IN3-" type="input"/>
+        <pin num="10" name="IN3+" type="input"/>
+        <pin num="11" name="V-" type="power_in"/>
+        <pin num="12" name="IN4+" type="input"/>
+        <pin num="13" name="IN4-" type="input"/>
+        <pin num="14" name="OUT4" type="output"/>
       </pins>
     </libpart>
   </libparts>
@@ -1449,191 +1086,230 @@
     <library logical="Simulation_SPICE">
       <uri>/usr/share/kicad/symbols//Simulation_SPICE.kicad_sym</uri>
     </library>
+    <library logical="switched-tag-symbol-lib">
+      <uri>/home/pab/niche-engineer-proj/analog-circuit-game-console/ms-circuit-video-games/games/switched-tag/analog-module/pcb/switched-tag-symbol-lib.kicad_sym</uri>
+    </library>
   </libraries>
   <nets>
     <net code="1" name="+3V3">
-      <node ref="U1" pin="4" pinfunction="V+" pintype="power_in"/>
-      <node ref="U10" pin="4" pinfunction="V+" pintype="power_in"/>
-      <node ref="U11" pin="4" pinfunction="V+" pintype="power_in"/>
-      <node ref="U12" pin="4" pinfunction="V+" pintype="power_in"/>
+      <node ref="R23" pin="2" pintype="passive"/>
       <node ref="U13" pin="4" pinfunction="V+" pintype="power_in"/>
       <node ref="U14" pin="4" pinfunction="V+" pintype="power_in"/>
       <node ref="U15" pin="4" pinfunction="V+" pintype="power_in"/>
-      <node ref="U16" pin="4" pinfunction="V+" pintype="power_in"/>
-      <node ref="U17" pin="4" pinfunction="V+" pintype="power_in"/>
-      <node ref="U18" pin="4" pinfunction="V+" pintype="power_in"/>
-      <node ref="U19" pin="4" pinfunction="V+" pintype="power_in"/>
-      <node ref="U2" pin="4" pinfunction="V+" pintype="power_in"/>
-      <node ref="U3" pin="4" pinfunction="V+" pintype="power_in"/>
-      <node ref="U4" pin="4" pinfunction="V+" pintype="power_in"/>
-      <node ref="U5" pin="4" pinfunction="V+" pintype="power_in"/>
-      <node ref="U6" pin="4" pinfunction="V+" pintype="power_in"/>
-      <node ref="U7" pin="4" pinfunction="V+" pintype="power_in"/>
-      <node ref="U8" pin="4" pinfunction="V+" pintype="power_in"/>
-      <node ref="U9" pin="4" pinfunction="V+" pintype="power_in"/>
       <node ref="V5" pin="1" pintype="passive"/>
     </net>
     <net code="2" name="-3V3">
-      <node ref="U1" pin="5" pinfunction="V-" pintype="power_in"/>
-      <node ref="U10" pin="5" pinfunction="V-" pintype="power_in"/>
-      <node ref="U11" pin="5" pinfunction="V-" pintype="power_in"/>
-      <node ref="U12" pin="5" pinfunction="V-" pintype="power_in"/>
-      <node ref="U13" pin="5" pinfunction="V-" pintype="power_in"/>
-      <node ref="U14" pin="5" pinfunction="V-" pintype="power_in"/>
-      <node ref="U15" pin="5" pinfunction="V-" pintype="power_in"/>
-      <node ref="U16" pin="5" pinfunction="V-" pintype="power_in"/>
-      <node ref="U17" pin="5" pinfunction="V-" pintype="power_in"/>
-      <node ref="U18" pin="5" pinfunction="V-" pintype="power_in"/>
-      <node ref="U2" pin="5" pinfunction="V-" pintype="power_in"/>
-      <node ref="U3" pin="5" pinfunction="V-" pintype="power_in"/>
-      <node ref="U4" pin="5" pinfunction="V-" pintype="power_in"/>
-      <node ref="U5" pin="5" pinfunction="V-" pintype="power_in"/>
-      <node ref="U6" pin="5" pinfunction="V-" pintype="power_in"/>
-      <node ref="U7" pin="5" pinfunction="V-" pintype="power_in"/>
-      <node ref="U8" pin="5" pinfunction="V-" pintype="power_in"/>
-      <node ref="U9" pin="5" pinfunction="V-" pintype="power_in"/>
+      <node ref="U13" pin="11" pinfunction="V-" pintype="power_in"/>
+      <node ref="U14" pin="11" pinfunction="V-" pintype="power_in"/>
+      <node ref="U15" pin="11" pinfunction="V-" pintype="power_in"/>
       <node ref="V4" pin="1" pintype="passive"/>
     </net>
-    <net code="3" name="/It Player Determination /it_dir_detect">
-      <node ref="D7" pin="2" pinfunction="A" pintype="passive"/>
-      <node ref="D8" pin="1" pinfunction="K" pintype="passive"/>
-      <node ref="U10" pin="3" pintype="output"/>
-    </net>
-    <net code="4" name="/It Player Determination /it_val_diff">
-      <node ref="R31" pin="1" pintype="passive"/>
-      <node ref="R37" pin="2" pintype="passive"/>
-      <node ref="U11" pin="3" pintype="output"/>
-    </net>
-    <net code="5" name="/It Player Determination /p1_it_value">
-      <node ref="R33" pin="1" pintype="passive"/>
-      <node ref="U14" pin="2" pinfunction="-" pintype="input"/>
-      <node ref="U14" pin="3" pintype="output"/>
-    </net>
-    <net code="6" name="/It Player Determination /p2_it_value">
-      <node ref="R34" pin="1" pintype="passive"/>
-      <node ref="U16" pin="2" pinfunction="-" pintype="input"/>
-      <node ref="U16" pin="3" pintype="output"/>
-    </net>
-    <net code="7" name="/Switched Tag 2D Collision Detection/Switched Tag Absolute Zero Detector/dir_detect_collision">
+    <net code="3" name="/It Player Determination /U9_V-">
       <node ref="C1" pin="1" pintype="passive"/>
-      <node ref="U6" pin="3" pintype="output"/>
-    </net>
-    <net code="8" name="/Switched Tag 2D Collision Detection/Switched Tag Absolute Zero Detector/zero_detect">
-      <node ref="C2" pin="2" pintype="passive"/>
-      <node ref="R24" pin="2" pintype="passive"/>
-      <node ref="R25" pin="1" pintype="passive"/>
+      <node ref="C3" pin="2" pintype="passive"/>
       <node ref="R28" pin="1" pintype="passive"/>
-      <node ref="U7" pin="3" pintype="output"/>
+      <node ref="U13" pin="2" pinfunction="IN1-" pintype="input"/>
     </net>
-    <net code="9" name="/Switched Tag 2D Collision Detection/diff_sum_result">
-      <node ref="R20" pin="2" pintype="passive"/>
-      <node ref="R22" pin="1" pintype="passive"/>
-      <node ref="U5" pin="3" pintype="output"/>
+    <net code="4" name="/It Player Determination /U9_Vout">
+      <node ref="C3" pin="1" pintype="passive"/>
+      <node ref="R28" pin="2" pintype="passive"/>
+      <node ref="R30" pin="1" pintype="passive"/>
+      <node ref="U13" pin="1" pinfunction="OUT1" pintype="output"/>
     </net>
-    <net code="10" name="/Switched Tag 2D Collision Detection/xdiff">
+    <net code="5" name="/It Player Determination /U10_V-">
+      <node ref="C2" pin="1" pintype="passive"/>
+      <node ref="C4" pin="2" pintype="passive"/>
+      <node ref="R29" pin="1" pintype="passive"/>
+      <node ref="U13" pin="6" pinfunction="IN2-" pintype="input"/>
+    </net>
+    <net code="6" name="/It Player Determination /U10_Vout">
+      <node ref="C4" pin="1" pintype="passive"/>
+      <node ref="R29" pin="2" pintype="passive"/>
+      <node ref="R31" pin="1" pintype="passive"/>
+      <node ref="U13" pin="7" pinfunction="OUT2" pintype="output"/>
+    </net>
+    <net code="7" name="/It Player Determination /U11_V+">
+      <node ref="R30" pin="2" pintype="passive"/>
+      <node ref="R32" pin="1" pintype="passive"/>
+      <node ref="U13" pin="10" pinfunction="IN3+" pintype="input"/>
+    </net>
+    <net code="8" name="/It Player Determination /U11_V-">
+      <node ref="R31" pin="2" pintype="passive"/>
+      <node ref="R33" pin="1" pintype="passive"/>
+      <node ref="U13" pin="9" pinfunction="IN3-" pintype="input"/>
+    </net>
+    <net code="9" name="/It Player Determination /U11_Vout">
+      <node ref="D6" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="D7" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="R33" pin="2" pintype="passive"/>
+      <node ref="U13" pin="8" pinfunction="OUT3" pintype="output"/>
+    </net>
+    <net code="10" name="/It Player Determination /U12_V-">
+      <node ref="R35" pin="1" pintype="passive"/>
+      <node ref="R36" pin="2" pintype="passive"/>
+      <node ref="U13" pin="13" pinfunction="IN4-" pintype="input"/>
+    </net>
+    <net code="11" name="/Switched Tag 2D Collision Detection/U1_V+">
+      <node ref="R1" pin="2" pintype="passive"/>
+      <node ref="R5" pin="2" pintype="passive"/>
+      <node ref="U14" pin="3" pinfunction="IN1+" pintype="input"/>
+    </net>
+    <net code="12" name="/Switched Tag 2D Collision Detection/U1_V-">
+      <node ref="R2" pin="2" pintype="passive"/>
+      <node ref="R7" pin="1" pintype="passive"/>
+      <node ref="U14" pin="2" pinfunction="IN1-" pintype="input"/>
+    </net>
+    <net code="13" name="/Switched Tag 2D Collision Detection/U1_Vout">
       <node ref="R12" pin="1" pintype="passive"/>
       <node ref="R7" pin="2" pintype="passive"/>
       <node ref="R9" pin="1" pintype="passive"/>
-      <node ref="U1" pin="3" pintype="output"/>
+      <node ref="U14" pin="1" pinfunction="OUT1" pintype="output"/>
     </net>
-    <net code="11" name="/Switched Tag 2D Collision Detection/xdiff+ydiff">
-      <node ref="R15" pin="2" pintype="passive"/>
-      <node ref="R17" pin="1" pintype="passive"/>
-      <node ref="U3" pin="3" pintype="output"/>
+    <net code="14" name="/Switched Tag 2D Collision Detection/U2_V+">
+      <node ref="R3" pin="2" pintype="passive"/>
+      <node ref="R6" pin="2" pintype="passive"/>
+      <node ref="U14" pin="5" pinfunction="IN2+" pintype="input"/>
     </net>
-    <net code="12" name="/Switched Tag 2D Collision Detection/xdiff-ydiff">
-      <node ref="R16" pin="2" pintype="passive"/>
-      <node ref="R18" pin="1" pintype="passive"/>
-      <node ref="U4" pin="3" pintype="output"/>
+    <net code="15" name="/Switched Tag 2D Collision Detection/U2_V-">
+      <node ref="R4" pin="2" pintype="passive"/>
+      <node ref="R8" pin="1" pintype="passive"/>
+      <node ref="U14" pin="6" pinfunction="IN2-" pintype="input"/>
     </net>
-    <net code="13" name="/Switched Tag 2D Collision Detection/ydiff">
+    <net code="16" name="/Switched Tag 2D Collision Detection/U2_Vout">
       <node ref="R10" pin="1" pintype="passive"/>
-      <node ref="R11" pin="1" pintype="passive"/>
+      <node ref="R14" pin="1" pintype="passive"/>
       <node ref="R8" pin="2" pintype="passive"/>
-      <node ref="U2" pin="3" pintype="output"/>
+      <node ref="U14" pin="7" pinfunction="OUT2" pintype="output"/>
     </net>
-    <net code="14" name="/collision_detect_signal">
-      <node ref="Q3" pin="2" pinfunction="G" pintype="input"/>
-      <node ref="Q4" pin="2" pinfunction="G" pintype="input"/>
-      <node ref="R29" pin="2" pintype="passive"/>
-      <node ref="U9" pin="3" pintype="output"/>
+    <net code="17" name="/Switched Tag 2D Collision Detection/U3_V-">
+      <node ref="D1" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="R11" pin="1" pintype="passive"/>
+      <node ref="R9" pin="2" pintype="passive"/>
+      <node ref="U14" pin="13" pinfunction="IN4-" pintype="input"/>
     </net>
-    <net code="15" name="/p1_it_button">
+    <net code="18" name="/Switched Tag 2D Collision Detection/U3_Vout">
+      <node ref="D1" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="D3" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="R12" pin="2" pintype="passive"/>
+      <node ref="R15" pin="1" pintype="passive"/>
+      <node ref="R17" pin="1" pintype="passive"/>
+      <node ref="U14" pin="14" pinfunction="OUT4" pintype="output"/>
+      <node ref="U15" pin="2" pinfunction="IN1-" pintype="input"/>
+    </net>
+    <net code="19" name="/Switched Tag 2D Collision Detection/U4_V-">
+      <node ref="D2" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="R10" pin="2" pintype="passive"/>
+      <node ref="R13" pin="1" pintype="passive"/>
+      <node ref="U14" pin="9" pinfunction="IN3-" pintype="input"/>
+    </net>
+    <net code="20" name="/Switched Tag 2D Collision Detection/U4_Vout">
+      <node ref="D2" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="D4" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="R14" pin="2" pintype="passive"/>
+      <node ref="R16" pin="1" pintype="passive"/>
+      <node ref="R18" pin="1" pintype="passive"/>
+      <node ref="U14" pin="8" pinfunction="OUT3" pintype="output"/>
+      <node ref="U15" pin="6" pinfunction="IN2-" pintype="input"/>
+    </net>
+    <net code="21" name="/Switched Tag 2D Collision Detection/U5_Vout">
+      <node ref="R17" pin="2" pintype="passive"/>
+      <node ref="R19" pin="1" pintype="passive"/>
+      <node ref="U15" pin="1" pinfunction="OUT1" pintype="output"/>
+    </net>
+    <net code="22" name="/Switched Tag 2D Collision Detection/U6_Vout">
+      <node ref="R18" pin="2" pintype="passive"/>
+      <node ref="R20" pin="1" pintype="passive"/>
+      <node ref="U15" pin="7" pinfunction="OUT2" pintype="output"/>
+    </net>
+    <net code="23" name="/Switched Tag 2D Collision Detection/U7_V+">
+      <node ref="R19" pin="2" pintype="passive"/>
+      <node ref="R20" pin="2" pintype="passive"/>
+      <node ref="U15" pin="12" pinfunction="IN4+" pintype="input"/>
+    </net>
+    <net code="24" name="/Switched Tag 2D Collision Detection/U7_V-">
+      <node ref="R21" pin="1" pintype="passive"/>
+      <node ref="R22" pin="1" pintype="passive"/>
+      <node ref="U15" pin="13" pinfunction="IN4-" pintype="input"/>
+    </net>
+    <net code="25" name="/Switched Tag 2D Collision Detection/U7_Vout">
+      <node ref="R22" pin="2" pintype="passive"/>
+      <node ref="U15" pin="14" pinfunction="OUT4" pintype="output"/>
+      <node ref="U15" pin="9" pinfunction="IN3-" pintype="input"/>
+    </net>
+    <net code="26" name="/Switched Tag 2D Collision Detection/U8_V+">
+      <node ref="R23" pin="1" pintype="passive"/>
+      <node ref="R24" pin="2" pintype="passive"/>
+      <node ref="U15" pin="10" pinfunction="IN3+" pintype="input"/>
+    </net>
+    <net code="27" name="/Switched Tag 2D Collision Detection/U8_Vout">
+      <node ref="D5" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="U15" pin="8" pinfunction="OUT3" pintype="output"/>
+    </net>
+    <net code="28" name="/collision_detect_signal">
+      <node ref="D5" pin="1" pinfunction="K" pintype="passive"/>
       <node ref="Q1" pin="2" pinfunction="G" pintype="input"/>
+      <node ref="Q2" pin="2" pinfunction="G" pintype="input"/>
+      <node ref="R25" pin="2" pintype="passive"/>
+    </net>
+    <net code="29" name="/p1_it_button">
+      <node ref="R26" pin="1" pintype="passive"/>
       <node ref="V2" pin="1" pintype="passive"/>
     </net>
-    <net code="16" name="/p1_it_signal">
-      <node ref="D7" pin="1" pinfunction="K" pintype="passive"/>
-      <node ref="Q3" pin="1" pinfunction="D" pintype="passive"/>
-      <node ref="Q5" pin="2" pinfunction="G" pintype="input"/>
-      <node ref="R32" pin="1" pintype="passive"/>
+    <net code="30" name="/p1_it_signal">
+      <node ref="Q1" pin="1" pinfunction="D" pintype="passive"/>
+      <node ref="R36" pin="1" pintype="passive"/>
+      <node ref="U13" pin="14" pinfunction="OUT4" pintype="output"/>
     </net>
-    <net code="17" name="/p1_win_signal">
-      <node ref="Q3" pin="3" pinfunction="S" pintype="passive"/>
-      <node ref="R42" pin="1" pintype="passive"/>
+    <net code="31" name="/p1_win_signal">
+      <node ref="Q1" pin="3" pinfunction="S" pintype="passive"/>
+      <node ref="R37" pin="1" pintype="passive"/>
     </net>
-    <net code="18" name="/p1x">
+    <net code="32" name="/p1x">
       <node ref="R1" pin="1" pintype="passive"/>
       <node ref="V1" pin="1" pintype="passive"/>
     </net>
-    <net code="19" name="/p1y">
+    <net code="33" name="/p1y">
       <node ref="R3" pin="1" pintype="passive"/>
       <node ref="V6" pin="1" pintype="passive"/>
     </net>
-    <net code="20" name="/p2_it_button">
-      <node ref="Q2" pin="2" pinfunction="G" pintype="input"/>
+    <net code="34" name="/p2_it_button">
+      <node ref="R27" pin="1" pintype="passive"/>
       <node ref="V3" pin="1" pintype="passive"/>
     </net>
-    <net code="21" name="/p2_it_signal">
-      <node ref="Q4" pin="1" pinfunction="D" pintype="passive"/>
-      <node ref="Q5" pin="1" pinfunction="D" pintype="passive"/>
-      <node ref="R38" pin="2" pintype="passive"/>
-      <node ref="U12" pin="3" pintype="output"/>
+    <net code="35" name="/p2_it_signal">
+      <node ref="D6" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="Q2" pin="1" pinfunction="D" pintype="passive"/>
+      <node ref="R34" pin="2" pintype="passive"/>
     </net>
-    <net code="22" name="/p2_win_signal">
-      <node ref="Q4" pin="3" pinfunction="S" pintype="passive"/>
-      <node ref="R43" pin="1" pintype="passive"/>
+    <net code="36" name="/p2_win_signal">
+      <node ref="Q2" pin="3" pinfunction="S" pintype="passive"/>
+      <node ref="R38" pin="1" pintype="passive"/>
     </net>
-    <net code="23" name="/p2x">
+    <net code="37" name="/p2x">
       <node ref="R2" pin="1" pintype="passive"/>
       <node ref="V7" pin="1" pintype="passive"/>
     </net>
-    <net code="24" name="/p2y">
+    <net code="38" name="/p2y">
       <node ref="R4" pin="1" pintype="passive"/>
       <node ref="V8" pin="1" pintype="passive"/>
     </net>
-    <net code="25" name="/pendelum_signal">
-      <node ref="U13" pin="1" pinfunction="+" pintype="input"/>
-      <node ref="U15" pin="1" pinfunction="+" pintype="input"/>
-      <node ref="U19" pin="2" pinfunction="-" pintype="input"/>
-      <node ref="U19" pin="3" pintype="output"/>
-    </net>
-    <net code="26" name="/two_winner_ignore_signal">
-      <node ref="Q5" pin="3" pinfunction="S" pintype="passive"/>
-      <node ref="R44" pin="1" pintype="passive"/>
-    </net>
-    <net code="27" name="GND">
-      <node ref="C3" pin="2" pintype="passive"/>
-      <node ref="C4" pin="2" pintype="passive"/>
-      <node ref="R13" pin="2" pintype="passive"/>
-      <node ref="R14" pin="1" pintype="passive"/>
-      <node ref="R19" pin="2" pintype="passive"/>
+    <net code="39" name="GND">
       <node ref="R21" pin="2" pintype="passive"/>
-      <node ref="R30" pin="2" pintype="passive"/>
+      <node ref="R24" pin="1" pintype="passive"/>
+      <node ref="R25" pin="1" pintype="passive"/>
       <node ref="R32" pin="2" pintype="passive"/>
-      <node ref="R36" pin="2" pintype="passive"/>
-      <node ref="R42" pin="2" pintype="passive"/>
-      <node ref="R43" pin="2" pintype="passive"/>
-      <node ref="R44" pin="2" pintype="passive"/>
+      <node ref="R34" pin="1" pintype="passive"/>
+      <node ref="R37" pin="2" pintype="passive"/>
+      <node ref="R38" pin="2" pintype="passive"/>
       <node ref="R5" pin="1" pintype="passive"/>
       <node ref="R6" pin="1" pintype="passive"/>
-      <node ref="U12" pin="1" pinfunction="+" pintype="input"/>
-      <node ref="U17" pin="1" pinfunction="+" pintype="input"/>
-      <node ref="U18" pin="2" pinfunction="-" pintype="input"/>
-      <node ref="U19" pin="5" pinfunction="V-" pintype="power_in"/>
-      <node ref="U7" pin="1" pinfunction="+" pintype="input"/>
-      <node ref="U8" pin="1" pinfunction="+" pintype="input"/>
-      <node ref="U9" pin="1" pinfunction="+" pintype="input"/>
+      <node ref="U13" pin="12" pinfunction="IN4+" pintype="input"/>
+      <node ref="U13" pin="3" pinfunction="IN1+" pintype="input"/>
+      <node ref="U13" pin="5" pinfunction="IN2+" pintype="input"/>
+      <node ref="U14" pin="10" pinfunction="IN3+" pintype="input"/>
+      <node ref="U14" pin="12" pinfunction="IN4+" pintype="input"/>
+      <node ref="U15" pin="3" pinfunction="IN1+" pintype="input"/>
+      <node ref="U15" pin="5" pinfunction="IN2+" pintype="input"/>
       <node ref="V1" pin="2" pintype="passive"/>
       <node ref="V2" pin="2" pintype="passive"/>
       <node ref="V3" pin="2" pintype="passive"/>
@@ -1643,171 +1319,27 @@
       <node ref="V7" pin="2" pintype="passive"/>
       <node ref="V8" pin="2" pintype="passive"/>
     </net>
-    <net code="28" name="Net-(C1-Pad2)">
+    <net code="40" name="Net-(C1-Pad2)">
       <node ref="C1" pin="2" pintype="passive"/>
-      <node ref="R23" pin="1" pintype="passive"/>
-    </net>
-    <net code="29" name="Net-(C2-Pad1)">
-      <node ref="C2" pin="1" pintype="passive"/>
-      <node ref="R23" pin="2" pintype="passive"/>
-      <node ref="R24" pin="1" pintype="passive"/>
-      <node ref="U7" pin="2" pinfunction="-" pintype="input"/>
-    </net>
-    <net code="30" name="Net-(C3-Pad1)">
-      <node ref="C3" pin="1" pintype="passive"/>
-      <node ref="Q1" pin="3" pinfunction="S" pintype="passive"/>
-      <node ref="U14" pin="1" pinfunction="+" pintype="input"/>
-    </net>
-    <net code="31" name="Net-(C4-Pad1)">
-      <node ref="C4" pin="1" pintype="passive"/>
-      <node ref="Q2" pin="3" pinfunction="S" pintype="passive"/>
-      <node ref="U16" pin="1" pinfunction="+" pintype="input"/>
-    </net>
-    <net code="32" name="Net-(C5-Pad1)">
-      <node ref="C5" pin="1" pintype="passive"/>
-      <node ref="R39" pin="2" pintype="passive"/>
-      <node ref="U17" pin="2" pinfunction="-" pintype="input"/>
-    </net>
-    <net code="33" name="Net-(C5-Pad2)">
-      <node ref="C5" pin="2" pintype="passive"/>
-      <node ref="R40" pin="1" pintype="passive"/>
-      <node ref="U17" pin="3" pintype="output"/>
-    </net>
-    <net code="34" name="Net-(D1-Pad1)">
-      <node ref="D1" pin="1" pinfunction="K" pintype="passive"/>
-      <node ref="D2" pin="2" pinfunction="A" pintype="passive"/>
-      <node ref="R22" pin="2" pintype="passive"/>
-      <node ref="U6" pin="1" pinfunction="+" pintype="input"/>
-    </net>
-    <net code="35" name="Net-(D1-Pad2)">
-      <node ref="D1" pin="2" pinfunction="A" pintype="passive"/>
-      <node ref="D2" pin="1" pinfunction="K" pintype="passive"/>
-      <node ref="R21" pin="1" pintype="passive"/>
-      <node ref="U6" pin="2" pinfunction="-" pintype="input"/>
-    </net>
-    <net code="36" name="Net-(D3-Pad1)">
-      <node ref="D3" pin="1" pinfunction="K" pintype="passive"/>
-      <node ref="R25" pin="2" pintype="passive"/>
-      <node ref="R26" pin="1" pintype="passive"/>
-      <node ref="U8" pin="2" pinfunction="-" pintype="input"/>
-    </net>
-    <net code="37" name="Net-(D3-Pad2)">
-      <node ref="D3" pin="2" pinfunction="A" pintype="passive"/>
-      <node ref="D4" pin="1" pinfunction="K" pintype="passive"/>
-      <node ref="U8" pin="3" pintype="output"/>
-    </net>
-    <net code="38" name="Net-(D4-Pad2)">
-      <node ref="D4" pin="2" pinfunction="A" pintype="passive"/>
       <node ref="R26" pin="2" pintype="passive"/>
-      <node ref="R27" pin="1" pintype="passive"/>
     </net>
-    <net code="39" name="Net-(D5-Pad1)">
-      <node ref="D5" pin="1" pinfunction="K" pintype="passive"/>
-      <node ref="D6" pin="2" pinfunction="A" pintype="passive"/>
-      <node ref="R31" pin="2" pintype="passive"/>
-      <node ref="U10" pin="1" pinfunction="+" pintype="input"/>
-    </net>
-    <net code="40" name="Net-(D5-Pad2)">
-      <node ref="D5" pin="2" pinfunction="A" pintype="passive"/>
-      <node ref="D6" pin="1" pinfunction="K" pintype="passive"/>
-      <node ref="R30" pin="1" pintype="passive"/>
-      <node ref="U10" pin="2" pinfunction="-" pintype="input"/>
-    </net>
-    <net code="41" name="Net-(D8-Pad2)">
-      <node ref="D8" pin="2" pinfunction="A" pintype="passive"/>
-      <node ref="R35" pin="1" pintype="passive"/>
-    </net>
-    <net code="42" name="Net-(Q1-Pad1)">
-      <node ref="Q1" pin="1" pinfunction="D" pintype="passive"/>
-      <node ref="U13" pin="2" pinfunction="-" pintype="input"/>
-      <node ref="U13" pin="3" pintype="output"/>
-    </net>
-    <net code="43" name="Net-(Q2-Pad1)">
-      <node ref="Q2" pin="1" pinfunction="D" pintype="passive"/>
-      <node ref="U15" pin="2" pinfunction="-" pintype="input"/>
-      <node ref="U15" pin="3" pintype="output"/>
-    </net>
-    <net code="44" name="Net-(R1-Pad2)">
-      <node ref="R1" pin="2" pintype="passive"/>
-      <node ref="R5" pin="2" pintype="passive"/>
-      <node ref="U1" pin="1" pinfunction="+" pintype="input"/>
-    </net>
-    <net code="45" name="Net-(R2-Pad2)">
-      <node ref="R2" pin="2" pintype="passive"/>
-      <node ref="R7" pin="1" pintype="passive"/>
-      <node ref="U1" pin="2" pinfunction="-" pintype="input"/>
-    </net>
-    <net code="46" name="Net-(R3-Pad2)">
-      <node ref="R3" pin="2" pintype="passive"/>
-      <node ref="R6" pin="2" pintype="passive"/>
-      <node ref="U2" pin="1" pinfunction="+" pintype="input"/>
-    </net>
-    <net code="47" name="Net-(R4-Pad2)">
-      <node ref="R4" pin="2" pintype="passive"/>
-      <node ref="R8" pin="1" pintype="passive"/>
-      <node ref="U2" pin="2" pinfunction="-" pintype="input"/>
-    </net>
-    <net code="48" name="Net-(R10-Pad2)">
-      <node ref="R10" pin="2" pintype="passive"/>
-      <node ref="R9" pin="2" pintype="passive"/>
-      <node ref="U3" pin="1" pinfunction="+" pintype="input"/>
-    </net>
-    <net code="49" name="Net-(R11-Pad2)">
-      <node ref="R11" pin="2" pintype="passive"/>
-      <node ref="R14" pin="2" pintype="passive"/>
-      <node ref="U4" pin="1" pinfunction="+" pintype="input"/>
-    </net>
-    <net code="50" name="Net-(R12-Pad2)">
-      <node ref="R12" pin="2" pintype="passive"/>
-      <node ref="R16" pin="1" pintype="passive"/>
-      <node ref="U4" pin="2" pinfunction="-" pintype="input"/>
-    </net>
-    <net code="51" name="Net-(R13-Pad1)">
-      <node ref="R13" pin="1" pintype="passive"/>
-      <node ref="R15" pin="1" pintype="passive"/>
-      <node ref="U3" pin="2" pinfunction="-" pintype="input"/>
-    </net>
-    <net code="52" name="Net-(R17-Pad2)">
-      <node ref="R17" pin="2" pintype="passive"/>
-      <node ref="R18" pin="2" pintype="passive"/>
-      <node ref="U5" pin="1" pinfunction="+" pintype="input"/>
-    </net>
-    <net code="53" name="Net-(R19-Pad1)">
-      <node ref="R19" pin="1" pintype="passive"/>
-      <node ref="R20" pin="1" pintype="passive"/>
-      <node ref="U5" pin="2" pinfunction="-" pintype="input"/>
-    </net>
-    <net code="54" name="Net-(R27-Pad2)">
+    <net code="41" name="Net-(C2-Pad2)">
+      <node ref="C2" pin="2" pintype="passive"/>
       <node ref="R27" pin="2" pintype="passive"/>
-      <node ref="R28" pin="2" pintype="passive"/>
-      <node ref="R29" pin="1" pintype="passive"/>
-      <node ref="U9" pin="2" pinfunction="-" pintype="input"/>
     </net>
-    <net code="55" name="Net-(R33-Pad2)">
-      <node ref="R33" pin="2" pintype="passive"/>
-      <node ref="R36" pin="1" pintype="passive"/>
-      <node ref="U11" pin="1" pinfunction="+" pintype="input"/>
+    <net code="42" name="Net-(D3-A)">
+      <node ref="D3" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="R11" pin="2" pintype="passive"/>
+      <node ref="R15" pin="2" pintype="passive"/>
     </net>
-    <net code="56" name="Net-(R34-Pad2)">
-      <node ref="R34" pin="2" pintype="passive"/>
-      <node ref="R37" pin="1" pintype="passive"/>
-      <node ref="U11" pin="2" pinfunction="-" pintype="input"/>
+    <net code="43" name="Net-(D4-A)">
+      <node ref="D4" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="R13" pin="2" pintype="passive"/>
+      <node ref="R16" pin="2" pintype="passive"/>
     </net>
-    <net code="57" name="Net-(R35-Pad2)">
+    <net code="44" name="Net-(D7-A)">
+      <node ref="D7" pin="2" pinfunction="A" pintype="passive"/>
       <node ref="R35" pin="2" pintype="passive"/>
-      <node ref="R38" pin="1" pintype="passive"/>
-      <node ref="U12" pin="2" pinfunction="-" pintype="input"/>
-    </net>
-    <net code="58" name="Net-(R39-Pad1)">
-      <node ref="R39" pin="1" pintype="passive"/>
-      <node ref="R41" pin="2" pintype="passive"/>
-      <node ref="U18" pin="3" pintype="output"/>
-    </net>
-    <net code="59" name="Net-(R40-Pad2)">
-      <node ref="R40" pin="2" pintype="passive"/>
-      <node ref="R41" pin="1" pintype="passive"/>
-      <node ref="U18" pin="1" pinfunction="+" pintype="input"/>
-      <node ref="U19" pin="1" pinfunction="+" pintype="input"/>
     </net>
   </nets>
 </export>

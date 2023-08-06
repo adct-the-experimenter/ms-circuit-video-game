@@ -2174,7 +2174,7 @@
     (property "Value" "TLV9154IDR" (at 260.35 31.75 0)
       (effects (font (size 1.524 1.524)))
     )
-    (property "Footprint" "SOIC_9154IDR_TEX" (at 240.03 41.91 0)
+    (property "Footprint" "switched-tag-footprint-lib:SOIC_9154IDR_TEX" (at 240.03 41.91 0)
       (effects (font (size 1.27 1.27) italic) hide)
     )
     (property "Datasheet" "TLV9154IDR" (at 240.03 41.91 0)
