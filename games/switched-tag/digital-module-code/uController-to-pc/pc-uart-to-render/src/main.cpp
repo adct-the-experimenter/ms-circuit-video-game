@@ -23,7 +23,7 @@
 
 #include "moving_average.h"
 
-//#define USING_DEBUG
+#define USING_DEBUG
 
 //variable used to indicate that program needs to quit
 //made atomic because it needs to be updated in main thread and adc update buffer thread
