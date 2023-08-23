@@ -1,5 +1,7 @@
 # Mixed-Signal Circuit Video Games
 
+## Move to new location: https://gitlab.com/pab44/ms-circuit-video-game
+
 This is an ambitious project that will make a video game system from a hybrid computing approach.
 
 The change was made from analog logic only to hybrid computing in order to give more options to developers.
